@@ -1,0 +1,82 @@
+---
+layout: post
+title: Testing testing 123
+tags: jekyll bootstrap github
+year: 2013
+month: 4
+day: 17
+published: true
+summary: testing my blog
+---
+
+This is a test of Jekyll. If it works I'll move all my blogs to github.
+
+TODO
+====
+
+* Include RSS feeds
+* Add Disqus comments
+
+Reference Material
+==================
+
+* http://cobyism.com/jekyll/docs/home/
+* http://paulstamatiou.com/how-to-wordpress-to-jekyll
+* http://spparker.com/posts/2011-04-26-keeping-jekyll-classy
+* http://help.github.com/articles/github-flavored-markdown.html
+
+Code highlighting test
+======================
+
+Can we highlight Erlang code?
+
+{% highlight erlang %}
+start([Config]) ->
+    File = (atom_to_list(Config)),
+    io:format("ws start:~p~n",[File]),
+    Conf = read_config(File),
+    start_link(Conf).
+{% endhighlight %}
+
+or Python?
+
+{% highlight python %}
+def phi(n):
+    """Computes the Euler's totient function φ(n) -
+    number of positive numbers less than or
+    equal to n which are relatively prime to n."""
+    from functools import reduce
+    from operator  import mul
+    return n * reduce(mul, [(1 - 1 / p) for p in prime_factors(n)], 1)
+{% endhighlight %}
+
+Quotes test
+===========
+
+Quotes seem to work properly. I can make &ldquo;curly quotes&rdquo; and
+``regular quotes''.
+
+Stuff that is broken
+====================
+
+* We'll see..
+
+Making Autolinking work
+==========
+
+To get autolinking to work needs some changes to <b>_config.yml</b>
+
+    rdiscount:
+        extensions: [smart, autolink]
+
+Comments
+========
+
+Will use Disqus for this. It seems to work nicely in other blogs like [Joe Armstrong's](http://joearms.github.io/).
+If anybody knows how to make a tweet link or why URLs are not autolinked please add a comment. When possible. Of course.
+
+Tests
+=====
+
+Page.title = ({{page.title}})
+Page.url = ({{page.url}})
