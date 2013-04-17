@@ -1,4 +1,4 @@
 markdown: rdiscount
 pygments: true
 rdiscount:
-	extensions: [smart, autolink]
+  extensions: [smart, autolink]
