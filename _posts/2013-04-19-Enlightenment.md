@@ -1,18 +1,17 @@
 ---
 layout: post
-title: Testing
-tags: jekyll bootstrap github
+title: Enlightenment
+tags: enlightenment zen
 year: 2013
 month: 4
-day: 17
+day: 19
 published: true
-summary: testing my blog
+summary: stop conceptual thinking
 ---
 I encountered this story on the [c2 wiki](http://c2.com/cgi/wiki?ZenSlap), and I present
 it to you, dear reader, unaltered.
 
-The Story
-=========
+### The Story
 Once there was a goat who was walking to town to eat with his friend the llama. As the
 goat was walking, he came upon a man who was looking like he was either about to scream or
 cry. The goat asked the man, "what's wrong?" The man replied that his wife had just left
