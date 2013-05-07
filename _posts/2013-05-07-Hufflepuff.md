@@ -1,7 +1,7 @@
 ---
 layout: post
 title: The True Nature of House Hufflepuff
-tags: harry-potter
+tags: harry-potter hufflepuff
 year: 2013
 month: 5
 day: 7
@@ -14,17 +14,19 @@ that Hufflepuff is basically, without being at all derogatory, a collective of s
 find it difficult that I would be the first to come up with this theory, given that there
 are plenty of indications in the books that support it.
 
+Let us examine the evidence briefly:
+
 + Exhibit A: Most Hufflepuff mages are considered nice and peaceful, the house has indeed
   produced the fewest number of dark wizards.
-+ Exhibit B: The entrance to their common room is right next to the kitchen, quoting ''in
-  a nook on the right hand side of the kitchen corridor''. It is also described decorated
-  with many ''interesting plants''.
++ Exhibit B: The entrance to their common room is right next to the kitchen, quoting ''_in
+  a nook on the right hand side of the kitchen corridor_''. It is also described decorated
+  with many ''_interesting plants_''.
 + Exhibit C: The head of house Hufflepuff teaches Herbology. Most Hufflepuff students also
   develop a particular interest in Herbology.
 + Exhibit D: A badger for an emblem sounds like exactly the kind of animal a stoner would
   come up with.
 + Exhibit E: The house name is somewhat suspect, possibly an attempt at self-deprecation.
-  Huff-le-puff?
+  **Huff**-le-**puff**?
 + Exhibit F: Cedric Diggory seemed, and indeed acted, like he was high most of the time. I
   mean you have to have been high to think opening an egg inside of a bath was a good
   idea.
