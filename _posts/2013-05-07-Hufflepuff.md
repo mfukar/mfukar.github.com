@@ -29,11 +29,11 @@ Let us examine the evidence briefly:
   **Huff**-le-**puff**?
 + Exhibit F: Cedric Diggory seemed, and indeed acted, like he was high most of the time. I
   mean you have to have been high to think opening an egg inside of a bath was a good
-  idea.
-+ On a related but not directly linked note, Hufflepuffs are particularly good finders -
-  it is not made clear if house membership somehow leads to or develops this aptitude.
-  Likewise, it is undoubtedly certain that Slytherins prefer cocaine; I am studying the
-  possibility that Gryffindors, with their reckless and fearless attitude, are fans of
-  Adderall or a related substance.
+  idea, even if you were taking somebody else's advice.
++ On another but not related note, Hufflepuffs are particularly good finders - it is not
+  made clear if house membership somehow leads to or develops this aptitude.  Likewise, it
+  is undoubtedly certain that Slytherins prefer cocaine; I am studying the possibility
+  that Gryffindors, with their reckless and fearless attitude, are fans of Adderall or a
+  related substance.
 
 That is all.
