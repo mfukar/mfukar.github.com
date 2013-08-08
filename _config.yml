@@ -1,4 +1,8 @@
 markdown: rdiscount
 pygments: true
 rdiscount:
-  extensions: [smart, autolink]
+    extensions: [smart, autolink]
+comments:
+    provider: disqus
+    disqus:
+        short_name: mfukarsramblings
