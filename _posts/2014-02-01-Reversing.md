@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Reversing Android applications, step by step
+title: Reversing Android applications, part 1: Analysing
 tags: android reversing java dex security
 year: 2014
 month: 2
@@ -60,11 +60,12 @@ DISCLAIMER: Other tools may be more appropriate depending on your purposes.
 16. Click Run. Now a `.jar` file is created in your project workspace directory. You can
     find it by right-clicking your project and selecting Properties > Resource > Location
 17. Run `JD-GUI` and point it to the `.jar` file
-18. Et voila, Java code
+18. Et voila, Java code!
 
 Now, you will observe this is not the usual verbose Java code we write. It will be filled
-with generic names like `a`, `b`, `aa`, `ab` and so forth, and particularly weird
-constructs will be presented to you:
+with generic names like `a`, `b`, `aa`, `ab` and so forth, and sometimes no Java code will
+be presented at all. This may be the result of an obfuscator, or simply bug(s) in the
+decompiler. Sometimes particularly weird constructs will be presented to you:
 
 {% highlight java %}
 if (!(paramObject instanceof h));
@@ -95,4 +96,6 @@ attacker can do it, damn it, so can we.
 
 In our next post(s), we will get into the subject of what we can do with a decompiled
 `.apk`, and how to examine it in other ways for information which can prove useful to
-attackers. Then, we will see what we can do to protect ourselves and our customers.
+attackers. Then, we will see how to monitor an application's activity, primarily on the
+network. Lastly, we will see what we can do to protect ourselves, our fellow Android
+device owners and (hopefully) our customers.
