@@ -5,7 +5,7 @@ tags: android reversing java dex security
 year: 2014
 month: 2
 day: 1
-published: false
+published: true
 summary: reversing android apps
 ---
 
@@ -34,14 +34,14 @@ Google Play store. How to do that, you say? Here is how:
 
 DISCLAIMER: Other tools may be more appropriate depending on your purposes.
 
-1. Download the [Android SDK (Eclipse/ADT)]() and unzip it
-2. Download [dex2jar]() and unzip it
-3. Download [JD_GUI]() and unzip it
+1. Download the [Android SDK (Eclipse/ADT)](http://developer.android.com/sdk/index.html) and unzip it
+2. Download [dex2jar](http://code.google.com/p/dex2jar/) and unzip it
+3. Download [JD-GUI](http://jd.benow.ca/) and unzip it
 4. If you have an Android device which you'll use:
     + Connect your Android device to your laptop/desktop
-    + Install [APK Extractor]() on your Android device
-    + Download your target app from Google Play
-    + Run APK Extractor to send the .apk file to your laptop/desktop
+    + Install [APK Extractor](https://play.google.com/store/apps/details?id=net.sylark.apkextractor) on your Android device
+    + Download your target application from Google Play
+    + Run APK Extractor to send the `.apk` file to your laptop/desktop
 
 5. If you do not have an Android device, and since you are the application developer, you
    can grab the `.apk` straight from the source, by building your application
@@ -49,14 +49,14 @@ DISCLAIMER: Other tools may be more appropriate depending on your purposes.
 7. Name your project, then click Finish
 8. Right click on the project in the Project Navigator, and select Build Path > Configure
    Build Path
-9. In the Libraries tab, select Add External JARs, browse to the directory where you
+9. In the Libraries tab, select "Add External JARs", browse to the directory where you
    unzipped `dex2jar`, select all the `.jar` files, and click Open > OK
 10. Drag your `.apk` file into the Eclipse/ADT project (choose Copy Files > OK)
 11. Right click on your project, then click Run As > Run Configurations
 12. Right click on Java Application, then click New
 13. Set Project to the same name you assigned to your project
 14. Set Main class to `com.googlecode.dex2jar.v3.Main`
-15. Go to the Arguments tab, and type the name of the .apk file in the field Program arguments
+15. Go to the "Arguments" tab, and type the name of the .apk file in the field Program arguments
 16. Click Run. Now a `.jar` file is created in your project workspace directory. You can
     find it by right-clicking your project and selecting Properties > Resource > Location
 17. Run `JD-GUI` and point it to the `.jar` file
