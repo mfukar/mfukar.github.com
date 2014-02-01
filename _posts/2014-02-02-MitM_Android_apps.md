@@ -5,9 +5,11 @@ tags: android monitoring mitm security burp
 year: 2014
 month: 2
 day: 2
-published: false
+published: true
 summary: reversing android apps
 ---
+# WIP
+
 One particularly useful way of analysing applications is observing and manipulating their
 behaviour at runtime. Generally speaking, the two most beneficial ways to accomplish this
 are debuggers and network proxies - for yours truly anyways, your mileage may vary. Let's
