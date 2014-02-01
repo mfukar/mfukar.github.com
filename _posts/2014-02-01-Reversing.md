@@ -32,7 +32,8 @@ circumvent our security controls and manipulate our app's users?
 We can answer all those questions by reversing the application we have uploaded onto
 Google Play store. How to do that, you say? Here is how:
 
-DISCLAIMER: Other tools may be more appropriate depending on your purposes.
+**DISCLAIMER**: I am neither endorsing not suggesting I have reviewed the tools mentioned
+below. Other tools may be more appropriate for your purposes.
 
 1. Download the [Android SDK (Eclipse/ADT)](http://developer.android.com/sdk/index.html) and unzip it
 2. Download [dex2jar](http://code.google.com/p/dex2jar/) and unzip it
