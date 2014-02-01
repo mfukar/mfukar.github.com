@@ -69,27 +69,27 @@ be presented at all. This may be the result of an obfuscator, or simply bug(s) i
 decompiler. Sometimes particularly weird constructs will be presented to you:
 
 {% highlight java %}
-if (!(paramObject instanceof h));
-h localh;
-label42: 
-do
-{
+    if (!(paramObject instanceof h));
+    h localh;
+    label42:
     do
     {
         do
         {
-            return false;
-            localh = (h)paramObject;
+            do
+            {
+                return false;
+                localh = (h)paramObject;
+            }
+            while (!this.b.equals(localh.b));
+            if (this.a != null)
+                break;
         }
-        while (!this.b.equals(localh.b));
-        if (this.a != null)
-            break;
+        while (localh.a != null);
+        if (this.c != null)
+            break label75;
     }
-    while (localh.a != null);
-    if (this.c != null)
-        break label75;
-}
-while (localh.c != null);
+    while (localh.c != null);
 {% endhighlight %}
 
 which will definitely need a little more than a glance to figure out. Nevertheless, if an
