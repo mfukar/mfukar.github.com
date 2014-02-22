@@ -77,9 +77,9 @@ The amount of things that went wrong here seems near incredible to me:
       used in DHE & ECDHE cipher suites) to a client and checks for acceptance can spot
       it. Does that sound right?
 
-* The commit that introduced it seems like it copy/pasted the `goto fail;` line there
-  - probably on accident. If someone skimmed through the patch it's quite unlikely they
-    wouldn't wonder about its presence.
+* The commit that introduced it seems like it copy/pasted the `goto fail;` line there,
+  probably on accident. If someone skimmed through the patch it's quite unlikely they
+  wouldn't wonder about its presence.
 
 More than anything, this makes me rethink about the tools people trust to do their jobs
 every day. I know for a fact acceptance testing in certain organizations uses typical
