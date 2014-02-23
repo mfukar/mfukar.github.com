@@ -78,7 +78,7 @@ The amount of things that went wrong here seems near incredible to me:
       it. Does that sound right?
 
 * The commit that introduced it seems like it copy/pasted the `goto fail;` line there,
-  probably on accident. If someone skimmed through the patch it's quite unlikely they
+  possibly by accident. If someone skimmed through the patch it's quite unlikely they
   wouldn't wonder about its presence.
 
 More than anything, this makes me rethink about the tools people trust to do their jobs
@@ -89,4 +89,4 @@ yadda yadda". Is it perhaps "too trusting" to assume those tools are doing their
 right? Acceptance testing is one thing; perhaps QA or security testing would test this
 with something like [TLSLite](https://github.com/trevp/tlslite).
 
-Who knows; after all a poor craftsman blames his tools. Take care.
+At any rate, I guess we'll all have a full Monday with this one. Take care.
