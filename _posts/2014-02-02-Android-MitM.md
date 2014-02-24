@@ -3,40 +3,54 @@ layout: post
 title: Reversing Android applications Part II
 tags: android monitoring mitm security burp
 year: 2014
-month: 2
-day: 2
-published: false
+month: 02
+day: 23
+published: true
 summary: Setting up a proxy for Google Android applications.
 ---
 
 # WIP
 
-One _particularly_ useful way of analysing applications is observing and manipulating their
-behaviour at runtime. Generally speaking, the two most beneficial ways to accomplish this
-are debuggers and network proxies - for yours truly anyways, your mileage may vary. Let's
-first take a look at how we can set up a proxy for our (Android) applications.
+One _particularly_ useful way of analysing applications is observing and manipulating
+their behaviour at runtime. Generally speaking, the two most beneficial ways to accomplish
+this are debuggers and network proxies - depending on the application, your mileage may
+vary. Let's first take a look at how we can set up a proxy for our (Android) applications.
 
 We'll start by choosing a proxy to use. My go-to choice is the [Burp
 Suite](http://portswigger.net/burp/) proxy, and this is the one I will use as an example
 here as well.
 
-Setting up the Burp proxy is particularly easy. After you've downloaded and launched it,
-head to the `Proxy` tab and ...
+Setting up the Burp proxy is particularly easy. After you've downloaded and launched it, head
+to the `Proxy` tab and then `Options`. You can set up your interface on `0.0.0.0` and port
+to 80 if your want to intercept HTTP connections, or 443 for HTTPS, or any port you wish
+to proxy on.
 
-+ `pushd /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext/ && wget http://bouncycastle.org/download/bcprov-jdk16-141.jar && popd`
+Edit your listener and choose the `Certificate` tab. Here you can specify what certificate
+your want to use. Typically, when I'm analysing one app at a time I use the third option
+"Generate a CA-signed certificate with a specific hostname" and I set up the hostname to
+the one the application uses for communication. Now if you check "Support invisible
+proxying" on the `Request Handling` tab, Burp will proxy all connections the application
+makes over the port we specified. However, since Burp's certificate is not trusted, this
+won't work; we need to add it to the trusted certificates list. To the command line!
 
-+ `adb pull /system/etc/security/cacerts.bks`
+1. `pushd /System/Library/Java/JavaVirtualMachines/1.6.0.jdk/Contents/Home/lib/ext/ && wget http://bouncycastle.org/download/bcprov-jdk16-141.jar && popd`
 
-+ `keytool -keystore cacerts.bks -storetype BKS -provider org.bouncycastle.jce.provider.BouncyCastleProvider -storepass "" -importcert -trustcacerts -alias Portswigger -file PortSwiggerCA`
+2. `adb pull /system/etc/security/cacerts.bks`
 
-+ You will be presented with a prompt on whether to trust the PortSwigger certificate; type 'Yes'
+3. `keytool -keystore cacerts.bks -storetype BKS -provider org.bouncycastle.jce.provider.BouncyCastleProvider -storepass "" -importcert -trustcacerts -alias Portswigger -file PortSwiggerCA`
 
-+ `adb chmod 777 /system/etc/security/cacerts.bks`
-+ `adb push cacerts.bks.modified /system/etc/security/cacerts.bks`
-+ `adb chmod 644 /system/etc/security/cacerts.bks`
-+ `cp /tmp/android-$USER/emulator-jxcLaF ~/.android/avd/devicename.avd/system.img`
-+ Restart your emulator, pull the `cacerts.bks` and make sure it contains the PortSwigger
+4. You will be presented with a prompt on whether to trust the PortSwigger certificate; type 'Yes'
+
+5. `adb chmod 777 /system/etc/security/cacerts.bks`
+6. `adb push cacerts.bks.modified /system/etc/security/cacerts.bks`
+7. `adb chmod 644 /system/etc/security/cacerts.bks`
+8. `cp /tmp/android-$USER/emulator-jxcLaF ~/.android/avd/devicename.avd/system.img`
+9. Restart your emulator, pull the `cacerts.bks` and make sure it contains the PortSwigger
 certificate.
+
+Roughly, what we did is get the phone's trusted certificate store (`cacerts.bks`) and add
+the PortSwigger certificate to it using keytool. Then we copied it back to the phone. The
+only shady step is #8, which we'll explain in a jiffy.
 
 The reason we chose this procedure is convenience; if we simply added our certificate
 through Android's (before ICS) functionality, it would not persist across reboots (try
@@ -53,5 +67,9 @@ and the added certs persist across reboots, as the store is on `/data` partition
 specifically at `/data/misc/keychain/cacerts-added`.
 
 Now we are able to verify our proxy works by setting it up, say at `192.168.1.33:8080`,
-and instructing our emulator to use it by passing the parameter `-http-proxy
-192.168.1.33:8080`
+and instructing our emulator to use it by passing the parameter `-http-proxy 192.168.1.33:8080`
+Do note that this method only works for applications which respect the proxy values in
+Java's `System` class or the default Android implementation of the `ProxySelector`.
+
+That's all! Next up, we'll have a look in our application's internals with various
+debuggers.
