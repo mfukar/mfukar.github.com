@@ -10,7 +10,7 @@ summary: Quickly enumerate all SSL/TLS cipher suites supported by a server.
 ---
 I recently had to perform a quick enumeration of cipher suites supported by a certain
 server. Like the good man that I am, I immediately wrote a script to automate it in case I
-need it in the future.
+need it in the future. Maybe you'll find it useful as well.
 
 It's hastily written and quite hacky in at least two points:
 
@@ -19,6 +19,8 @@ It's hastily written and quite hacky in at least two points:
   didn't want to put effort into detection etc.
 * No effort has been made to group / distinguish results by protocol version, so the
   output is quite dense
+
+Here goes:
 
 {% highlight bash %}
 #!/usr/bin/env bash
@@ -74,3 +76,5 @@ for cipher in ${ciphers[@]} ; do
     fi
 done
 {% endhighlight %}
+
+EOT
