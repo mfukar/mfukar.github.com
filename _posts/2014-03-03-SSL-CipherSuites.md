@@ -12,8 +12,9 @@ I recently had to perform a quick enumeration of cipher suites supported by a ce
 server. Like the good man that I am, I immediately wrote a script to automate it in case I
 need it in the future. Maybe you'll find it useful as well.
 
-It's hastily written and quite hacky in at least two points:
+It's hastily written and quite hacky in at least three points:
 
+* It requires OpenSSL to be installed and in your `$PATH`
 * It does not support `-stdname`, which is _very_ useful to make sense of the results
   quickly. Note that the `-stdname` option is conditionally compiled in OpenSSL, so I
   didn't want to put effort into detection etc.
