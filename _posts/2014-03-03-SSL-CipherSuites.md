@@ -5,7 +5,7 @@ tags: openssl cipher ssl
 year: 2014
 month: 03
 day: 03
-published: false
+published: true
 summary: Quickly enumerate all SSL/TLS cipher suites supported by a server.
 ---
 I recently had to perform a quick enumeration of cipher suites supported by a certain
@@ -61,7 +61,7 @@ for cipher in ${ciphers[@]} ; do
         echo YES
     else
         if [ "$VERBOSE" = false ] ; then echo -en "\r\033[K"; continue ; fi
-    
+
         if [[ "$result" =~ ":error:" ]] ; then
             error=$(echo -n $result | cut -d':' -f6)
             echo "NO ($error)"
@@ -70,7 +70,7 @@ for cipher in ${ciphers[@]} ; do
             echo $result
         fi
     fi
-    
+
     if [[ ! $DELAY == 0 ]] ; then
         sleep $DELAY
     fi
