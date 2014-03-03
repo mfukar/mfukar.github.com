@@ -29,7 +29,7 @@ Here goes:
 SERVER=encrypted.google.com
 PORT=443
 DELAY=0 # No delay by default
-VERBOSE=false # Print results on all ciphers by default
+VERBOSE=false # Print only positive results by default
 
 args=`getopt d:p:rs: $*`
 if [ $? != 0 ] ; then
