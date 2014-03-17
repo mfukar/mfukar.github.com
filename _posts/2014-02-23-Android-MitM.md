@@ -15,7 +15,7 @@ Actively monitoring an application's network activity is particularly advantageo
 only can we look at what the app is doing, but also get to alter its communication, e.g.
 by altering network responses to it and directly observe any effects this might have. This
 way, we can analyse code paths of great depth inside the application, which we might not
-be able to do so otherwise.
+have been able to do otherwise.
 
 # and on Android?
 
@@ -55,6 +55,11 @@ won't work; we need to add it to the trusted certificates list. To the command l
 8. `cp /tmp/android-$USER/emulator-jxcLaF ~/.android/avd/devicename.avd/system.img`
 9. Restart your emulator, pull the `cacerts.bks` and make sure it contains the PortSwigger
 certificate.
+
+__[EDIT]__: I received a couple questions about point #1; in particular, what is the deal
+with the ¡magic! path. That path is the value of `$JAVA_HOME/jre/lib/ext/` or on my system
+(OS X) `$JAVA_HOME/Home/lib/ext/`. Its significance lies in that the JRE will look there
+(unless your `$CLASSPATH` is modified) for providers.
 
 Roughly, what we did is get the phone's trusted certificate store (`cacerts.bks`) and add
 the PortSwigger certificate to it using keytool. Then we copied it back to the phone. The
