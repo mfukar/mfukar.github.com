@@ -84,7 +84,9 @@ specifically at `/data/misc/keychain/cacerts-added`.
 Now we are able to verify our proxy works by setting it up, say at `192.168.1.33:8080`,
 and instructing our emulator to use it by passing the parameter `-http-proxy 192.168.1.33:8080`
 Do note that this method only works for applications which respect the proxy values in
-Java's `System` class or the default Android implementation of the `ProxySelector`.
+Java's `System` class or the default Android implementation of the `ProxySelector`. For
+other applications, my approach is to set up a fake DNS responder and use the
+`-dns-server` parameter of the emulator to point all of the device's DNS lookups there.
 
 That's all! Next up, we'll have a look in our application's internals with various
 debuggers.
