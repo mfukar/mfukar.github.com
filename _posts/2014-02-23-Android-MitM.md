@@ -49,9 +49,11 @@ won't work; we need to add it to the trusted certificates list. To the command l
 
 4. You will be presented with a prompt on whether to trust the PortSwigger certificate; type 'Yes'
 
-5. `adb chmod 777 /system/etc/security/cacerts.bks`
-6. `adb push cacerts.bks.modified /system/etc/security/cacerts.bks`
-7. `adb chmod 644 /system/etc/security/cacerts.bks`
+5. `adb shell mount -o rw,remount -t yaffs2 /dev/block/mtdblock0 /system`, where
+   `mtdblock0` is the appropriate device for your emulator instance.
+5. `adb shell chmod 777 /system/etc/security/cacerts.bks`
+6. `adb push cacerts.bks /system/etc/security/cacerts.bks`
+7. `adb shell chmod 644 /system/etc/security/cacerts.bks`
 8. `cp /tmp/android-$USER/emulator-jxcLaF ~/.android/avd/devicename.avd/system.img`
 9. Restart your emulator, pull the `cacerts.bks` and make sure it contains the PortSwigger
 certificate.
