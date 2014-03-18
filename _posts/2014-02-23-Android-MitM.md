@@ -65,11 +65,11 @@ with the ¡magic! path. That path is the value of `$JAVA_HOME/jre/lib/ext/` or o
 
 Roughly, what we did is get the phone's trusted certificate store (`cacerts.bks`) and add
 the PortSwigger certificate to it using keytool. Then we copied it back to the phone. The
-only shady step is #8, which we'll explain in a jiffy.
+only shady step is #9, which we'll explain in the next paragraph. The reason we chose this
+procedure is convenience; if we simply added our certificate through Android's (before
+ICS) functionality, it would not persist across reboots (try it).
 
-The reason we chose this procedure is convenience; if we simply added our certificate
-through Android's (before ICS) functionality, it would not persist across reboots (try
-it).  Now the reason the above works is because we are moving the temporary copy
+Now the reason the procedure above worked is because we are moving the temporary copy
 `emulator-[\d{6}]` to `system.img`. If you want this to be scriptable, which will prove
 useful in the future, read the answers to [this StackOverflow
 question](http://stackoverflow.com/questions/15417105/forcing-the-android-emulator-to-store-changes-to-system)
