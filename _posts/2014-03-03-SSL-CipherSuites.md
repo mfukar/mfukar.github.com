@@ -49,6 +49,7 @@ done
 # OpenSSL requires port number with the host:
 SERVER="${SERVER}:${PORT}"
 
+# Testing all suites with encryption:
 ciphers=$(openssl ciphers 'ALL:eNULL' | sed -e 's/:/ /g')
 
 echo "Testing: ${SERVER}"
@@ -58,6 +59,7 @@ echo
 for cipher in ${ciphers[@]} ; do
     echo -n "Testing $cipher ... "
     result=$(echo -n | openssl s_client -debug -cipher "$cipher" -connect $SERVER < /dev/null 2>&1)
+
     if [[ "$result" =~ "Cipher is ${cipher}" ]] ; then
         echo YES
     else
