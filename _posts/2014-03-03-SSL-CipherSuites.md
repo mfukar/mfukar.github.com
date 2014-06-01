@@ -31,9 +31,9 @@ PORT=443
 DELAY=0 # No delay by default
 VERBOSE=false # Print only positive results by default
 
-args=`getopt d:p:rs: $*`
+args=`getopt d:p:s:v $*`
 if [ $? != 0 ] ; then
-        echo 'Usage: list_ciphers.sh -d <delay> -s <server> -p <port> -r'
+        echo 'Usage: list_ciphers.sh -d <delay> -s <server> -p <port> -v'
         exit 2
 fi
 
