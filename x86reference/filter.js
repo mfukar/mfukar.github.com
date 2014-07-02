@@ -7,7 +7,7 @@
 
 		function onInputEvent(e) {
 			_input = e.target;
-			var tables = document.getElementsByClassName(_input.getAttribute('data-table'));
+			var tables = document.getElementsByClassName(_input.getAttribute('ref-table'));
 			Arr.forEach.call(tables, function(table) {
 				Arr.forEach.call(table.tBodies, function(tbody) {
 					Arr.forEach.call(tbody.rows, _filter);
@@ -22,7 +22,7 @@
 
 		return {
 			init: function() {
-				var inputs = document.getElementsByClassName('light-table-filter');
+				var inputs = document.getElementsByClassName('table-filter');
 				Arr.forEach.call(inputs, function(input) {
 					input.oninput = onInputEvent;
 				});
