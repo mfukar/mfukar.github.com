@@ -2,8 +2,8 @@
 layout: secondary
 title: AAA — ASCII Adjust After Addition
 ---
-<h1 id="aaa-ascii-adjust-after-addition">AAA—ASCII Adjust After Addition</h1>
-<table>
+<h2 id="aaa">AAA—ASCII Adjust After Addition</h2>
+<table class="table">
 <tr>
 	<td>Opcode</td>
 	<td>Instruction</td>
@@ -21,8 +21,8 @@ title: AAA — ASCII Adjust After Addition
 	<td>ASCII adjust AL after addition.</td>
 </tr>
 </table>
-<h2 id="instruction-operand-encoding">Instruction Operand Encoding</h2>
-<table>
+<h3 id="instruction-operand-encoding">Instruction Operand Encoding</h3>
+<table class="table">
 <tr>
 	<td>Op/En</td>
 	<td>Operand 1</td>
@@ -38,11 +38,11 @@ title: AAA — ASCII Adjust After Addition
 	<td>NA</td>
 </tr>
 </table>
-<h2 id="description">Description</h2>
+<h3 id="description">Description</h3>
 <p>Adjusts the sum of two unpacked BCD values to create an unpacked BCD result. The AL register is the implied source and destination operand for this instruction. The AAA instruction is only useful when it follows an ADD instruction that adds (binary addition) two unpacked BCD values and stores a byte result in the AL register. The AAA instruction then adjusts the contents of the AL register to contain the correct 1-digit unpacked BCD result.</p>
 <p>If the addition produces a decimal carry, the AH register increments by 1, and the CF and AF flags are set. If there was no decimal carry, the CF and AF flags are cleared and the AH register is unchanged. In either case, bits 4 through 7 of the AL register are set to 0.</p>
 <p>This instruction executes as described in compatibility mode and legacy mode. It is not valid in 64-bit mode.</p>
-<h2 id="operation">Operation</h2>
+<h3 id="operation">Operation</h3>
 <pre>IF 64-Bit Mode
   THEN
      #UD;
@@ -61,23 +61,23 @@ title: AAA — ASCII Adjust After Addition
      FI;
 FI;
 </pre>
-<h2 id="flags-affected">Flags Affected</h2>
+<h3 id="flags-affected">Flags Affected</h3>
 <p>The AF and CF flags are set to 1 if the adjustment results in a decimal carry; otherwise they are set to 0. The OF, SF, ZF, and PF flags are undefined.</p>
-<h2 id="protected-mode-exceptions">Protected Mode Exceptions</h2>
-<table>
+<h3 id="protected-mode-exceptions">Protected Mode Exceptions</h3>
+<table class="table">
 <tr>
 	<td>#UD</td>
 	<td>If the LOCK prefix is used.</td>
 </tr>
 </table>
-<h2 id="real-address-mode-exceptions">Real-Address Mode Exceptions</h2>
+<h3 id="real-address-mode-exceptions">Real-Address Mode Exceptions</h3>
 <p>Same exceptions as protected mode.</p>
-<h2 id="virtual-8086-mode-exceptions">Virtual-8086 Mode Exceptions</h2>
+<h3 id="virtual-8086-mode-exceptions">Virtual-8086 Mode Exceptions</h3>
 <p>Same exceptions as protected mode.</p>
-<h2 id="compatibility-mode-exceptions">Compatibility Mode Exceptions</h2>
+<h3 id="compatibility-mode-exceptions">Compatibility Mode Exceptions</h3>
 <p>Same exceptions as protected mode.</p>
-<h2 id="64-bit-mode-exceptions">64-Bit Mode Exceptions</h2>
-<table>
+<h3 id="64-bit-mode-exceptions">64-Bit Mode Exceptions</h3>
+<table class="table">
 <tr>
 	<td>#UD</td>
 	<td>If in 64-bit mode.</td>
