@@ -45,21 +45,21 @@ title: AAA — ASCII Adjust After Addition
 <p>This instruction executes as described in compatibility mode and legacy mode. It is not valid in 64-bit mode.</p>
 <h3 id="operation">Operation</h3>
 <pre>IF 64-Bit Mode
-  THEN
-     #UD;
-  ELSE
-     IF ((AL AND 0FH) &gt; 9) or (AF = 1)
-       THEN
-          AL ← AL + 6;
-          AH ← AH + 1;
-          AF ← 1;
-          CF ← 1;
-          AL ← AL AND 0FH;
-       ELSE
-          AF ← 0;
-          CF ← 0;
-          AL ← AL AND 0FH;
-     FI;
+	THEN
+		#UD;
+	ELSE
+		IF ((AL AND 0FH) &gt; 9) or (AF = 1)
+		THEN
+			AL ← AL + 6;
+			AH ← AH + 1;
+			AF ← 1;
+			CF ← 1;
+			AL ← AL AND 0FH;
+		ELSE
+			AF ← 0;
+			CF ← 0;
+			AL ← AL AND 0FH;
+		FI;
 FI;
 </pre>
 <h3 id="flags-affected">Flags Affected</h3>
