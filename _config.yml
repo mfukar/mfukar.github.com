@@ -1,7 +1,7 @@
-markdown: rdiscount
+markdown: redcarpet
 pygments: true
 rdiscount:
-    extensions: [smart, autolink]
+    extensions: ['smart', 'autolink', 'tables', 'fenced_code_blocks', 'strikethrough', 'superscript', 'no_intra_emphasis', 'space_after_headers', 'footnotes']
 comments:
     provider: disqus
     disqus:
