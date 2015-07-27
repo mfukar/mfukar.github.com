@@ -21,17 +21,18 @@ layout: secondary
 
 	<hr />
 
+	{% if page.previous != nil %}
+	<a href="{{page.previous.url}}">Previous post</a>
+	{% endif %}
 	<!-- the tweet button -->
-	<p>
-	<a href="https://twitter.com/share"  class="twitter-share-button"
-		data-url="http://mfukar.github.io{{page.url}}">Tweet</a>
-	</p>
+	<p><a href="https://twitter.com/share"  class="twitter-share-button"
+		data-url="http://mfukar.github.io{{page.url}}">Tweet this</a></p>
 	<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 	<!-- end of tweet button -->
+	{% if page.next != nil %}
+	<a href="{{page.next.url}}">Next post</a>
+	{% endif %}
 
-	<hr />
-	<a href="http://mfukar.github.io{{page.previous.url}}">Previous post</a>
-	<a href="http://mfukar.github.io{{page.next.url}}">Next post</a>
 	<hr />
 
 	<h3>Comments:</h3>
