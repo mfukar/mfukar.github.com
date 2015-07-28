@@ -55,3 +55,6 @@ vulnerability:
 goto-fail:
     slug: goto-fail
     name: goto fail;
+functional-programming:
+    slug: functional-programming
+    name: functional programming
