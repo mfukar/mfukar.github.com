@@ -10,3 +10,12 @@ xss:
 not-a-bug:
     slug: not-a-bug
     name: not a bug
+jekyll:
+    slug: jekyll
+    name: Jekyll
+bootstrap:
+    slug: bootstrap
+    name: Bootstrap
+github:
+    slug: github
+    name: GitHub
