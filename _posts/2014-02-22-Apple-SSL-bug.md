@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Apple's SSL/TLS bug
-tags: apple ssl certificate vulnerability goto fail
+tags: [apple, ssl, certificate, vulnerability, goto-fail]
 year: 2014
 month: 02
 day: 22

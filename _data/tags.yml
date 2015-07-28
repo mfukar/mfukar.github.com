@@ -46,3 +46,12 @@ dex:
 security:
     slug: security
     name: security
+apple:
+    slug: apple
+    name: Apple
+vulnerability:
+    slug: vulnerability
+    name: vulnerability
+goto-fail:
+    slug: goto-fail
+    name: goto fail;
