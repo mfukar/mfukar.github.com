@@ -8,35 +8,33 @@ layout: secondary
 		<p></p>
 	</div>
 
-	<div id="content">
+	<div id="content" style="float: none; border-right: none; display: block;">
 		{{ content }}
+
+		{% if page.previous != nil %}
+		<a href="{{page.previous.url}}" style="float: left; padding: 10px 0px; text-decoration: none;">« Past</a>
+		{% endif %}
+		{% if page.next != nil %}
+		<a href="{{page.next.url}}" style="float: right; padding: 10px 0px; text-decoration: none;">Future »</a>
+		{% endif %}
 	</div>
 
-	<div id="tags">
+	<div id="tags" style="margin: 50px 0px">
 		Tagged:
 		{% for tag in page.tags %}
 		<a href="/blog/tag/{{tag}}">{{tag}}</a> &nbsp;
 		{% endfor %}
 	</div>
 
-	<hr />
-
-	{% if page.previous != nil %}
-	<a href="{{page.previous.url}}">Previous post</a>
-	{% endif %}
 	<!-- the tweet button -->
-	<p><a href="https://twitter.com/share"  class="twitter-share-button"
-		data-url="http://mfukar.github.io{{page.url}}">Tweet this</a></p>
+	<a href="https://twitter.com/share"  class="twitter-share-button"
+		data-url="http://mfukar.github.io{{page.url}}">Tweet this</a>
 	<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
 	<!-- end of tweet button -->
-	{% if page.next != nil %}
-	<a href="{{page.next.url}}">Next post</a>
-	{% endif %}
 
+	<!-- TODO: remove -->
 	<hr />
-
 	<h3>Comments:</h3>
-
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
 		var disqus_shortname = 'mfukarsramblings';
