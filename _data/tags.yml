@@ -19,3 +19,15 @@ bootstrap:
 github:
     slug: github
     name: GitHub
+python:
+    slug: python
+    name: Python
+https:
+    slug: https
+    name: HTTPS
+ssl:
+    slug: ssl
+    name: SSL
+server:
+    slug: server
+    name: server
