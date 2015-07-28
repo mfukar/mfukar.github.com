@@ -1,0 +1,16 @@
+---
+layout: secondary
+title: Navigation by tag
+---
+<h1>Nonsense by tag: {{ page.tag }}</h1>
+<div>
+    {% if site.tags[page.tag] %}
+		<ul>
+        {% for post in site.tags[page.tag] %}
+			<li><a href="{{ post.url }}/">{{ post.title }}</a>
+        {% endfor %}
+		</ul>
+    {% else %}
+        <p>There are no posts for this tag...yet.</p>
+    {% endif %}
+</div>

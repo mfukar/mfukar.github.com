@@ -1,0 +1,12 @@
+99-problems:
+    slug: 99-problems
+    name: 99 problems
+haskell:
+    slug: haskell
+    name: Haskell
+xss:
+    slug: xss
+    name: XSS
+not-a-bug:
+    slug: not-a-bug
+    name: not a bug
