@@ -31,3 +31,18 @@ ssl:
 server:
     slug: server
     name: server
+android:
+    slug: android
+    name: Android
+reversing:
+    slug: reversing
+    name: reversing
+java:
+    slug: java
+    name: Java
+dex:
+    slug: dex
+    name: DEX
+security:
+    slug: security
+    name: security

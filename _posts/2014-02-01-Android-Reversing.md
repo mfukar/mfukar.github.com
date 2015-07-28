@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Reversing Android applications Part I
-tags: android reversing java dex security
+tags: [android, reversing, java, dex, security]
 year: 2014
 month: 02
 day: 01
