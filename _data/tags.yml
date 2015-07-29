@@ -58,3 +58,9 @@ goto-fail:
 functional-programming:
     slug: functional-programming
     name: functional programming
+primes:
+    slug: primes
+    name: prime numbers
+number-theory:
+    slug: number-theory
+    name: number theory
