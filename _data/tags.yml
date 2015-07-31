@@ -64,3 +64,12 @@ primes:
 number-theory:
     slug: number-theory
     name: number theory
+goldbach:
+    slug: goldbach
+    name: Goldbach
+gray-code:
+    slug: gray-code
+    name: Gray code
+huffman-code:
+    slug: huffman-code
+    name: Huffman code
