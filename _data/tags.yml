@@ -73,3 +73,6 @@ gray-code:
 huffman-code:
     slug: huffman-code
     name: Huffman code
+trees:
+    slug: trees
+    name: trees
