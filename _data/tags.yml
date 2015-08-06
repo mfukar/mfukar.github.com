@@ -76,3 +76,6 @@ huffman-code:
 trees:
     slug: trees
     name: trees
+avl-trees:
+    slug: avl-trees
+    name: AVL trees
