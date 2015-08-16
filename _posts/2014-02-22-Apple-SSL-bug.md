@@ -8,7 +8,7 @@ day: 22
 published: true
 summary: Outreach of an SSL certificate verification bug.
 ---
-# The story
+### The story
 
 On 21/2/2014, Apple pushed a [security update](http://support.apple.com/kb/HT6147) for iOS
 with a rather scary description:
@@ -22,7 +22,7 @@ and he wondered, prophetically: "_Did they fuck SSL up?_".
 Earlier in the day, we'd spotted the bug in Safari but we were fooled, handwaving its
 origin to network misconfiguration in an attempt to get out of the office by 17:00. :(
 
-# The bug
+### The bug
 
 As you probably have already read in other places by now, the bug is this:
 
