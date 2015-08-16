@@ -9,7 +9,7 @@ published: true
 summary: Setting up a proxy for Google Android applications.
 ---
 
-# Passive and active monitoring
+### Passive and active monitoring
 
 Actively monitoring an application's network activity is particularly advantageous: not
 only can we look at what the app is doing, but also get to alter its communication, e.g.
@@ -17,7 +17,7 @@ by altering network responses to it and directly observe any effects this might 
 way, we can analyse code paths of great depth inside the application, which we might not
 have been able to do otherwise.
 
-# and on Android?
+### and on Android?
 
 One _particularly_ useful way of analysing applications is observing and manipulating
 their behaviour at runtime. Generally speaking, the two most beneficial ways to accomplish

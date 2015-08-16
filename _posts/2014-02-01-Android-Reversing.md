@@ -15,7 +15,7 @@ Opening paragraph which draws parallels between aforementioned quote and applica
 security, containing at least one capitalised acronym, und mentioning "NSA" getting your
 pale white ass, if at all possible.
 
-# The objective
+### The objective
 
 We shall take on the role of a developer, who wishes to review their Android application
 in order to verify its security controls, the protection measures they have implemented,
