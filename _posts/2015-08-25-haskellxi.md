@@ -5,7 +5,7 @@ tags: [99-problems, haskell, functional-programming, trees]
 year: 2015
 month: 08
 day: 25
-published: true
+published: false
 summary: Cultural Learnings of 99 Problems for Make Benefit Glorious Language of Haskell
 ---
 
@@ -19,4 +19,4 @@ display_lisp (Node v []) = [v]
 display_lisp (Node v ts) = '(' : v : concatMap display_lisp ts ++ ")"
 ```
 
-### Problem 74:
+### Problem 81:
