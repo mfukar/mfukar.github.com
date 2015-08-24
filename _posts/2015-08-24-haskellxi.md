@@ -59,7 +59,7 @@ graph_to_adj (Graph (x : xs) es) = Adj ((x, neighs) : zs)
 
 Now, let's go back from an adjacency list to a graph-term. For each pair, we need to
 first accumulate its first part into a list, and then produce the cartesian product of the
-two parts; for `('a', 'bc')`, the following edges are implied `('a', 'b')` and `('a', 'c')`:
+two parts; for `("a", "bc")`, the following edges are implied `("a", "b")` and `("a", "c")`:
 
 ```haskell
 adj_to_graph :: (Eq a) => Adjacency a -> Graph a
