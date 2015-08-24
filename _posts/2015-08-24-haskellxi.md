@@ -96,6 +96,8 @@ edges from/to isolated nodes to obtain the edges, and just concatenate all the n
 the edges, sort and keep unique ones:
 
 ```haskell
+import Data.List (nub, sort)
+
 friendly_to_graph :: (Ord a) => Friendly a -> Graph a
 friendly_to_graph (Edge []) = Graph [] []
 friendly_to_graph (Edge vs) = (Graph xs ys)
