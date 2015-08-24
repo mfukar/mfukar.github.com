@@ -106,4 +106,10 @@ friendly_to_graph (Edge vs) = (Graph xs ys)
         ys = filter (uncurry (/=)) vs
 ```
 
+, and of course we can now go from user-friendly to adjacency-list trivially:
+
+```haskell
+friendly_to_adj = friendly_to_graph . graph_to_adj
+```
+
 That wasn't so bad! We'll continue with more graphs soon!
