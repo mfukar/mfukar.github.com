@@ -80,6 +80,9 @@ nodes to themselves:
 ```haskell
 graph_to_friendly :: (Eq a) => Graph a -> Friendly a
 graph_to_friendly (Graph [] _) = Edge []
+
+-- If we wanted vertices without edges to appear as "Edge [(d, "")]" we could replace
+-- `zip i i` with something like `zip i (cycle "")`:
 graph_to_friendly (Graph xs ys) = Edge (ys ++ zip i i)
     where
         -- Is are all the Xs which aren't contained in any pairs of Ys:
