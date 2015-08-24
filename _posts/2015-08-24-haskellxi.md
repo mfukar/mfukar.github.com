@@ -64,6 +64,7 @@ two parts; for `("a", "bc")`, the following edges are implied `("a", "b")` and `
 ```haskell
 adj_to_graph :: (Eq a) => Adjacency a -> Graph a
 adj_to_graph (Adj []) = Graph [] []
+-- (ns >>= f) , because I'm such a showoff!
 adj_to_graph (Adj ((v, ns) : vs)) = Graph ( v : xs) ((ns >>= f) ++ ys)
     where
         -- Remember to prevent the duplicates which are encoded in adjacency-list form:
