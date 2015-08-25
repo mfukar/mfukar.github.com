@@ -97,7 +97,8 @@ adj_to_friendly = graph_to_adj . adj_to_friendly
 
 Now converting from user-friendly to graph-term is not much harder. We filter out the
 edges from/to isolated nodes to obtain the edges, and just concatenate all the nodes from
-the edges, sort and keep unique ones:
+the edges, and keep unique ones. Sorting is not actually required, unless you want the
+vertices to appear in some specific order:
 
 ```haskell
 import Data.List (nub)
