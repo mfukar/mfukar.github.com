@@ -90,9 +90,6 @@ import Data.Bool
 import Data.List
 import Data.Ord
 
-data Graph a = Graph [a] [(a, a)]
-    deriving (Show, Eq)
-
 data GraphW a = GraphW [a] [(a, a, Int)]
     deriving (Show, Eq)
 
