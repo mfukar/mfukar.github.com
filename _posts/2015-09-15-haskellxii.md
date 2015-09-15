@@ -65,14 +65,15 @@ cycle' v graph = [v : path | e <- graph, fst e == v, path <- paths (snd e) v [x 
 and now `spantree` is:
 
 ```haskell
+import Data.List
+
 spantree :: (Eq a) => Graph a -> [Graph a]
 spantree (Graph xs ys) = (filter connected) $ (filter (not . cycles)) $ (filter nnodes) trees
     where
         trees = [Graph (nodes edges) edges | edges <- foldr acc [[]] ys]
         acc e es = es ++ (map (e:) es)
         --
-        nodes e = foldr (\x xs -> if x `elem` xs then xs else x:xs)
-                        [] $ concatMap (\(a, b) -> [a, b]) e
+        nodes e = nub $ concatMap (\(a, b) -> [a, b]) e
         nnodes (Graph xs' ys') = length xs == length xs'
         cycles (Graph xs' ys') = any ((/=) 0 . length . flip cycle' ys') xs'
         connected (Graph (x':xs') ys') = not $ any (null) [paths x' y' ys' | y' <- xs']
