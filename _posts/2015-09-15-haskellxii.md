@@ -45,26 +45,9 @@ cycle' v (Edge es) = (es >>= f)
 
 Alright! This is hard!
 
-Since we have assumed in previous problems our graphs are directed, let's first provide
-the implementation for directed graphs:
-
-```haskell
-spantree :: (Eq a) => Graph a -> [Graph a]
-spantree (Graph xs ys) = (filter connected) $ (filter (not . cycles)) $ (filter nnodes) trees
-    where
-        -- First obtain all possible trees:
-        trees = [Graph (nodes edges) edges | edges <- foldr acc [[]] ys]
-        acc e es = es ++ (map (e:) es)
-        -- Then accumulate all their nodes:
-        nodes e = foldr (\x xs -> if x `elem` xs then xs else x:xs)
-                        [] $ concat $ map (\(a, b) -> [a, b]) e
-        -- These are the conditions our tree must fulfil to be a spanning tree:
-        nnodes (Graph xs' ys') = length xs == length xs'
-        cycles (Graph xs' ys') = any ((/=) 0 . length . flip cycle' (Edge ys')) xs'
-        connected (Graph (x':xs') ys') = not $ any (null) [paths x' y' ys' | y' <- xs']
-```
-
-For the undirected graph solution, let's start with implementing `paths` and `cycle'`:
+Even if the idea of a spanning tree can be generalised for directed multigraphs, this is
+probably not the intent of the question, so let's assume our graph is undirected. Let's
+start with implementing `paths` and `cycle'`:
 
 ```haskell
 paths :: (Eq a) => a -> a -> [(a, a)] -> [[a]]
@@ -79,10 +62,20 @@ cycle' v graph = [v : path | e <- graph, fst e == v, path <- paths (snd e) v [x 
               ++ [v : path | e <- graph, snd e == v, path <- paths (fst e) v [x | x <- graph, x /= e]]
 ```
 
-and now the only thing we need to change in `spantree` is this line:
+and now `spantree` is:
 
 ```haskell
+spantree :: (Eq a) => Graph a -> [Graph a]
+spantree (Graph xs ys) = (filter connected) $ (filter (not . cycles)) $ (filter nnodes) trees
+    where
+        trees = [Graph (nodes edges) edges | edges <- foldr acc [[]] ys]
+        acc e es = es ++ (map (e:) es)
+        --
+        nodes e = foldr (\x xs -> if x `elem` xs then xs else x:xs)
+                        [] $ concatMap (\(a, b) -> [a, b]) e
+        nnodes (Graph xs' ys') = length xs == length xs'
         cycles (Graph xs' ys') = any ((/=) 0 . length . flip cycle' ys') xs'
+        connected (Graph (x':xs') ys') = not $ any (null) [paths x' y' ys' | y' <- xs']
 ```
 
 ### Problem 84: Construct the minimal spanning tree.
