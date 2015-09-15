@@ -79,3 +79,6 @@ trees:
 avl-trees:
     slug: avl-trees
     name: AVL trees
+prim-algorithm:
+    slug: prim-algorithm
+    name: Prim's algorithm

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 99 problems in Haskell, 81-84
-tags: [99-problems, haskell, functional-programming, trees]
+tags: [99-problems, haskell, functional-programming, trees, prim-algorithm]
 year: 2015
 month: 09
 day: 15
