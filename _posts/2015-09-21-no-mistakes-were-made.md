@@ -36,12 +36,12 @@ performing some hoax. Around the same time, the principal was sending out this r
 letter / press release to double down on the school's bad choices, and the mayor did the
 same supporting everyone _but_ the brown kid.
 
-So what actually happened is something we've all done as a kid. They were unreasonably
-afraid, and couldn't / wouldn't admit it, so they contorted all reason in order to make
-their choices seem reasonable, and like they were acting prudently and reasonably. The
-assumption being nobody's allowed to admit a mistake, because these are adults, in charge
-of other actual people, and they're not allowed to be afraid, especially of _nothing at
-all_, because that's a sign of weakness.
+So what actually happened is something we've all come across as a kid. They were
+unreasonably afraid, and couldn't / wouldn't admit it, so they contorted all reason in
+order to make their choices seem reasonable, and like they were acting prudently and
+reasonably. The assumption being nobody's allowed to admit a mistake, because these are
+adults, in charge of other actual people, and they're not allowed to be afraid, especially
+of _nothing at all_, because that's a sign of weakness.
 
 We've all done this. We said a white lie, and then doubled down upon it, and with every
 additional lie the whole story gets so ludicrous but the cost of saying "I'm lying this
