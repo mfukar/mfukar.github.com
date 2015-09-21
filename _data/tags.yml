@@ -1,6 +1,9 @@
 99-problems:
     slug: 99-problems
     name: 99 problems
+rant:
+    slug: rant
+    name: rant
 haskell:
     slug: haskell
     name: Haskell
