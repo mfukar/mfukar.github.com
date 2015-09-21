@@ -70,12 +70,21 @@ import Data.List
 spantree :: (Eq a) => Graph a -> [Graph a]
 spantree (Graph xs ys) = (filter connected) $ (filter (not . cycles)) $ (filter nnodes) trees
     where
+        -- These are all the possible trees, formed by accumulating over all edges:
         trees = [Graph (nodes edges) edges | edges <- foldr acc [[]] ys]
         acc e es = es ++ (map (e:) es)
-        --
+        -- This is the list of all unique nodes in a graph:
         nodes e = nub $ concatMap (\(a, b) -> [a, b]) e
+        -- The conditions a tree must satisfy to be a spanning tree are:
+        -- * the number of nodes is the same as (Graph xs ys), and
+        -- * it contains no cycles, and
+        -- * is connected, which means there is a path between every pair of vertices
         nnodes (Graph xs' ys') = length xs == length xs'
         cycles (Graph xs' ys') = any ((/=) 0 . length . flip cycle' ys') xs'
+        -- a) Since our graph is undirected, we only need to check for paths from x'
+        --    to each vertex in xs'
+        -- b) Therefore, if there's any pair of vertices which aren't connected, then the
+        --    graph is also unconnected
         connected (Graph (x':xs') ys') = not $ any (null) [paths x' y' ys' | y' <- xs']
 ```
 
