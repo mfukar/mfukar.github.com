@@ -85,3 +85,9 @@ avl-trees:
 prim-algorithm:
     slug: prim-algorithm
     name: Prim's algorithm
+welsh-powell:
+    slug: welsh-powell
+    name: Welsh-Powell algorithm
+graphs:
+    slug: graphs
+    name: graphs
