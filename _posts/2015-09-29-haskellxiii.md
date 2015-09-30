@@ -5,7 +5,7 @@ tags: [99-problems, haskell, functional-programming, graphs, welsh-powell]
 year: 2015
 month: 09
 day: 29
-published: false
+published: true
 summary: Cultural Learnings of 99 Problems for Make Benefit Glorious Language of Haskell
 ---
 
@@ -36,12 +36,16 @@ iso :: (Ord a, Enum a, Show a) => Graph a -> Graph a -> Bool
 iso g@(Graph xs ys) h@(Graph xs' ys') = length xs == length xs'
                                      && length ys == length ys'
                                      && canon (graph_to_adj g) == canon (graph_to_adj h)
+```
 
+Now to the meat of the solution. Our relabeling strategy in order to find a canonical form
+will work through all possible permutations of `[1..(length g)]` and will therefore be
+very expensive. I've come across some algorithm(s) which exchange speed for probabilistic
+guarantees, but I felt they were overkill for this exercise.
 
--- Our relabeling strategy to find a canonical form goes through all possible permutations
--- and is therefore very expensive. Try as I might, I didn't find any actual algorithms
--- for canonicalisation which weren't behind a paywall. I probably didn't look hard enough:
+I also noticed most of said algorithms were behind paywalls, e.g. Springer.
 
+```haskell
 canon :: (Ord a, Enum a, Show a) => Adjacency a -> String
 canon (Adj g) = minimum $ map f $ permutations [1..(length g)]
    where
@@ -49,6 +53,7 @@ canon (Adj g) = minimum $ map f $ permutations [1..(length g)]
       vs = map fst g
       -- Find, via brute force on all possible orderings (permutations) of vs,
       -- a mapping of vs to [1..(length g)] which is minimal.
+      -- For example, map [1, 5, 6, 7] to [1, 2, 3, 4].
       -- Minimal is defined lexicographically, since `f` returns strings:
       f p = let n = zip vs p
             in (show [(snd x, sort id $ map (\x -> snd $ head $ snd $ break ((==) x . fst) n)
@@ -69,11 +74,15 @@ graphH1 = Graph [1, 2, 3, 4, 5, 6, 7, 8]
           [(1, 2), (1, 4), (1, 5), (6, 2), (6, 5), (6, 7),
            (8, 4), (8, 5), (8, 7), (3, 2), (3, 4), (3, 7)]
 
+-- Should be `True`:
 main = do print $ iso graphG1 graphH1
 ```
 
 ### Problem 86: Node degree and graph coloring.
 
+The problem statement gives us the Welsh-Powell algorithm for graph coloring, which is
+relatively simple to implement. First let's take care of the boilerplate and subproblems
+(a) and (b):
 
 ```haskell
 module Main where
@@ -100,7 +109,12 @@ sort_degree :: (Eq a, Ord a, Show a) => Graph a -> Adjacency a
 sort_degree g = Adj $ sortBy (flip $ comparing $ length . snd) l
     where
         Adj l = graph_to_adj g
+```
 
+Alright, that was the easy part. Now on to implement WP. `wpcolor` will map each vertex to
+a color, signified by an integer value:
+
+```haskell
 wpcolor :: (Eq a, Ord a, Show a) => Graph a -> [(a, Int)]
 wpcolor g = wpcolor' l [] 1
     where
@@ -109,6 +123,8 @@ wpcolor g = wpcolor' l [] 1
         wpcolor' [] ys _ = ys
         wpcolor' xs ys n = let ys' = color xs ys n
                             in wpcolor' [x | x <- xs, notElem (fst x, n) ys'] ys' (n+1)
+        -- Color will take care of steps 3 & 4, by coloring vertices not connected to
+        -- already colored vertices:
         color []            ys n = ys
         color ((v, e) : xs) ys n = if any (\x -> (x, n) `elem` ys) e
                                    then color xs ys n
@@ -119,11 +135,8 @@ main = do print $ wpcolor petersen
 
 ### Problem 87: Depth-first traversal revisited
 
-Alright! This is hard!
-
-Even if the idea of a spanning tree can be generalised for directed multigraphs, this is
-probably not the intent of the question, so let's assume our graph is undirected. Let's
-start with implementing `paths` and `cycle'`:
+DFS is not a particularly hard problem, but the stack implementation took me some time to
+get right.
 
 ```haskell
 module Main where
@@ -154,3 +167,7 @@ dfs' stack visited (Graph vs es) init = if null unvisited
 main = do print $ dfs (Graph [1,2,3,4,5] [(1,2),(2,3),(1,4),(3,4),(5,2),(5,4)]) 1
 ```
 
+I don't like the solution above at all, all the `if-then-else` are making me sick. I think
+I'll rewrite it to pattern match, when I get some time to think about it.
+
+Until then, toodle-loo.
