@@ -4,7 +4,7 @@ title: 99 problems in Haskell, 85-87
 tags: [99-problems, haskell, functional-programming, graphs, welsh-powell]
 year: 2015
 month: 09
-day: 29
+day: 30
 published: true
 summary: Cultural Learnings of 99 Problems for Make Benefit Glorious Language of Haskell
 ---
