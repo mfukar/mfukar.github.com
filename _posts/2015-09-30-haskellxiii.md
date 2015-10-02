@@ -147,27 +147,24 @@ data Graph a = Graph [a] [(a, a)]
     deriving (Show, Eq)
 
 dfs :: (Eq a, Show a) => Graph a -> a -> [a]
-dfs g init = reverse $ dfs' [init] [init] g init
+dfs (Graph vs es) n | n `notElem` vs = []
+                    | otherwise = dfs' (Graph vs es) [n]
 
-dfs' stack visited (Graph vs es) init = if null unvisited
-                                        then
-                                            if 1 == length stack
-                                            then visited
-                                            else dfs' (tail stack) visited (Graph vs es) (head (tail stack))
-                                        else
-                                            dfs' (head unvisited : stack)
-                                                 (head unvisited : visited)
-                                                 (Graph vs es)
-                                                 (head unvisited)
+dfs' :: (Eq a) => Graph a -> [a] -> [a]
+dfs' (Graph [] _) _  = []
+dfs' (Graph _ _) [] = []
+dfs' (Graph vs es) (top:stack) | top `notElem` vs = dfs' (Graph remaining es) stack
+                               | otherwise = top : dfs' (Graph remaining es) (adjacent ++ stack)
     where
-        unvisited = map (\(a, b) -> if a == init then b else a)
-                        (filter (\(a, b) -> g(a, b) || g(b, a)) es)
-        g (a, b) = a == init && b `notElem` visited
+        adjacent = [x | (y, x) <- es, y == top]
+                -- Remove the below if the graph is considered directed:
+                ++ [x | (x, y) <- es, y == top]
+        remaining = [x | x <- vs, x /= top]
 
 main = do print $ dfs (Graph [1,2,3,4,5] [(1,2),(2,3),(1,4),(3,4),(5,2),(5,4)]) 1
 ```
 
-I don't like the solution above at all, all the `if-then-else` are making me sick. I think
-I'll rewrite it to pattern match, when I get some time to think about it.
-
-Until then, toodle-loo.
+There we go, that is way simpler than a bunch of `if-else-then`, but it's working in the
+same way. The quadratic edge lookup is ugly. For linear graph algorithms including DFS,
+I'd turn
+[here](http://www.researchgate.net/publication/2295532_Lazy_Depth-First_Search_and_Linear_Graph_Algorithms_in_Haskell).
