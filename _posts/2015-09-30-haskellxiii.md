@@ -28,7 +28,6 @@ data Adjacency a = Adj [(a, [a])] deriving (Show, Eq)
 
 -- We'll need to convert the two given graphs into the adjacency-list representation for
 -- convenience:
-import p80 (graph_to_adj)
 
 -- Two graphs are isomorphic if they have the same canonical representation:
 iso :: (Ord a, Enum a, Show a) => Graph a -> Graph a -> Bool
@@ -87,7 +86,6 @@ relatively simple to implement. First let's take care of the boilerplate and sub
 
 import Data.List (find, sortBy)
 import Data.Ord (comparing)
-import p80 (graph_to_adj)
 
 data Graph a = Graph [a] [(a, a)]
     deriving (Show, Eq)
