@@ -93,7 +93,6 @@ spantree (Graph xs ys) = (filter connected) $ (filter (not . cycles)) $ (filter 
 Prim's algorithm is surprisingly easy to implement.
 
 ```haskell
-module Main where
 
 import Data.Bool
 import Data.List

@@ -17,7 +17,6 @@ Uhm, OK, the problems have begun delving too much into weird-for-tutorials terri
 like Project Euler goes too far into math:
 
 ```haskell
-module Main where
 
 import Data.List (permutations)
 
@@ -85,7 +84,6 @@ relatively simple to implement. First let's take care of the boilerplate and sub
 (a) and (b):
 
 ```haskell
-module Main where
 
 import Data.List (find, sortBy)
 import Data.Ord (comparing)
@@ -139,7 +137,6 @@ DFS is not a particularly hard problem, but the stack implementation took me som
 get right.
 
 ```haskell
-module Main where
 
 import Data.List
 
