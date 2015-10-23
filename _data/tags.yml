@@ -91,3 +91,9 @@ welsh-powell:
 graphs:
     slug: graphs
     name: graphs
+n-queens:
+    slug: n-queens
+    name: N queens problem
+knights-tour:
+    slug: knights-tour
+    name: Knight's Tour problem
