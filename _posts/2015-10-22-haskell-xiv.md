@@ -1,11 +1,11 @@
 ---
 layout: post
 title: 99 problems in Haskell, 88-93
-tags: [99-problems, haskell, functional-programming]
+tags: [99-problems, haskell, functional-programming, n-queens, knights-tour, graphs]
 year: 2015
 month: 10
 day: 22
-published: false
+published: true
 summary: Cultural Learnings of 99 Problems for Make Benefit Glorious Language of Haskell
 ---
 
@@ -54,7 +54,7 @@ import Data.List (permutations)
 queens :: Int -> [[Int]]
 -- All permutations, i.e. queens' placements must be "safe":
 -- This test is slow-ish. To do better, I would write a list comprehension that generates
--- permutations and incorporates the `safe` test as a guard:
+-- permutations and incorporates the `safe` test as a guard, to fail as early as possible:
 queens n = filter test (permutations [1..n])
     where
         test [] = True
@@ -83,7 +83,7 @@ could tell.
 
 ```haskell
 import Data.Ord (comparing)
-import Data.List ((\\), minimumBy, intercalate)
+import Data.List ((\\), minimumBy)
 
 type Square = (Int, Int)
 
@@ -101,10 +101,23 @@ valid_moves n (x, y) = filter (on_board n) [(x+1, y+2), (x+1, y-2),
 knights_to :: Int -> Square -> [Square]
 knights_to n finish = knights' [finish]
     where
+        -- Our search ends when there's no more moves:
         knights' moves | next_choices == [] = moves
+        -- Otherwise we keep going by picking a `next` move:
                        | otherwise = knights' (next : moves)
             where
+                -- The choice for our next move is a heuristic by Warnsdorf, which says
+                -- to prefer squares with fewer onward moves. We won't be concerned with
+                -- how to break possible ties:
                 next = minimumBy (comparing (length . choices)) next_choices
+
+                -- We pick valid moves from the last move taken, which is the head of
+                -- `moves`:
                 next_choices = choices (head moves)
+
+                -- All the valid moves from a given square, to which we haven't been to
+                -- yet:
                 choices square = valid_moves n square \\ moves
 ```
+
+Short pause here, maybe to solve the last few problems over the weekend. Cheers, folks!
