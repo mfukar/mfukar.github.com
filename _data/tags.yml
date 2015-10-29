@@ -97,3 +97,12 @@ n-queens:
 knights-tour:
     slug: knights-tour
     name: Knight's Tour problem
+amstrad-cpc:
+    slug: amstrad-cpc
+    name: AMSTRAD CPC
+basic:
+    slug: basic
+    name: BASIC
+floating-point:
+    slug: floating-point
+    name: floating-point numbers
