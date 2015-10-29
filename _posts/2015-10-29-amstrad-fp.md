@@ -16,7 +16,10 @@ I thought I'd replicate it here, for posterity and somesuch.
 Question: _How are floating point numbers encoded in Amstrad CPC's BASIC?_
 
 First things first. A floating point number takes up 5 octets. Octets 0-3 contain the
-mantissa in little-endian byte order. Octet 4 is the exponent.
+mantissa in little-endian byte order. Octet 4 is the exponent. The first bit of the
+mantissa is the sign bit: 0 for positive, 1 for negative. The mantissa is encoded so as
+the most significant bit is always 1. This allows it to not be stored, and the sign bit to
+be specified in its place.
 
 The exponent is biased, +128.
 
@@ -54,3 +57,5 @@ Let's calculate the floating point number:
      0.7853981633670628 * 2^(0x82 - bias) = 3.1415926534682512
 
 Yes, it was π all along! Note the accuracy up to the 9th decimal.
+
+For more information on CPC internals, I suggest the excellent [CPC Wiki](http://www.cpcwiki.eu/).
