@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Amstrad CPC BASIC - encoding of floating point numbers
-tags: [amstrad, cpc, basic, floating-point]
+tags: [amstrad-cpc, basic, floating-point]
 year: 2015
 month: 10
 day: 29
