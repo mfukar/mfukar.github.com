@@ -26,9 +26,6 @@ data Graph a = Graph [a] [(a, a)]
 -- We're going to need our adjacency-list representation:
 data Adjacency a = Adj [(a, [a])] deriving (Show, Eq)
 
--- We'll need to convert the two given graphs into the adjacency-list representation for
--- convenience:
-
 -- Two graphs are isomorphic if they have the same canonical representation:
 iso :: (Ord a, Enum a, Show a) => Graph a -> Graph a -> Bool
 iso g@(Graph xs ys) h@(Graph xs' ys') = length xs == length xs'
