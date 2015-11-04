@@ -1,6 +1,6 @@
 ---
 layout: post
-title: 99 problems in Haskell, 88-93
+title: 99 problems in Haskell, 88-91
 tags: [99-problems, haskell, functional-programming, n-queens, knights-tour, graphs]
 year: 2015
 month: 10
