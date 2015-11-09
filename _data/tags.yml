@@ -106,3 +106,6 @@ basic:
 floating-point:
     slug: floating-point
     name: floating-point numbers
+state-monad:
+    slug: state-monad
+    name: State monad
