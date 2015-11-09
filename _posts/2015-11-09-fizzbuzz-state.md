@@ -66,7 +66,7 @@ me down the path of compiler errors. So I bit the unavoidable bullet: dive into 
 [transformers](http://hackage.haskell.org/package/transformers-0.4.3.0/docs/src/Control-Monad-Trans-State-Strict.html#State)
 package.
 
-You'll see `State` is defined in terms of `StateT`. Instead of going to `StateT` first,
+You'll see `State` is defined in terms of `StateT`. Rather than going to `StateT` first,
 instead I'm thinking: if this level of abstraction makes _any_ sense, you could read a
 little bit of the source code and understand even a little bit of it. So let's read the
 "constructor", `state`:
