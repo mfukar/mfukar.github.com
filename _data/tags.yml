@@ -109,3 +109,6 @@ floating-point:
 state-monad:
     slug: state-monad
     name: State monad
+kruskals-mst:
+    slug: kruskals-mst
+    name: Kruskal's algorithm
