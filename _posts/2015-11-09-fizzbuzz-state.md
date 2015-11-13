@@ -119,13 +119,7 @@ according to our implementation of `fizzbuzz`. We evaluate the state 100 times, 
 all the values, print them, done! Sounds good in theory. Let's test:
 
 ```haskell
--- At this point, I literally stole the notation from Justin's post.
--- Why `flip`? Because evalState accepts the computation first, the initial state second;
--- we'd like to flip the order of the two. Exercise: Don't.
--- Our initial state is 1, sure enough.
-flip evalState 1 $ do
-    res <- replicateM 100 state_ints_fizzbuzz
-    return res
+flip evalState (replicateM 100 state_ints_fizzbuzz) 1
 ```
 
 [`replicateM`](http://hackage.haskell.org/package/base-4.8.1.0/docs/Control-Monad.html#v:replicateM)
@@ -133,15 +127,12 @@ performs an action `n` times, and gathers the results. The crucial question is "
 replicateM and not replicate?", and the answer is because the context is a monad, the one
 we so painstakingly constructed.
 
-After `replicateM` gathers the results, we bind them to `res`, and simply return it. Now
-to put all this in the context of, say, `main :: IO ()`, I will simply print all the
+Now to put all this in the context of, say, `main :: IO ()`, I will simply print all the
 results we've gathered, like so:
 
 ```haskell
 main :: IO ()
-main = mapM_ putStrLn $ flip evalState 1 $ do
-    res <- replicateM 100 state_ints_fizzbuzz
-    return res
+main = mapM_ putStrLn $ evalState (replicateM 100 state_ints_fizzbuzz) 1
 ```
 
 Compiles, __and__ works as expected!
