@@ -21,11 +21,13 @@ import Data.Array
 
 vonkoch edges = filter conjecture nodes
     where
+        -- The conjecture involves trees, so the number of edges is the number of vertices
+        -- minus one:
         n = length edges + 1
         nodes = permutations [1..n]
-        conjecture nodes = and $ zipWith (/=) dists (tail dists)
+        conjecture numbering = and $ zipWith (/=) dists (tail dists)
             where
-            node_array = listArray (1, n) nodes
+            node_array = listArray (1, n) numbering
             dists = sort $ map (\(x, y) -> abs (node_array ! x - node_array ! y)) edges
 ```
 
