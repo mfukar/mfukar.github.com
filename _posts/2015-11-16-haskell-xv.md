@@ -35,7 +35,8 @@ is equivalent to requiring that all pairs of differences are not equal.
 
 ### Problem 93: An arithmetic puzzle
 
-This reminded me a lot of similar assignments. Let's get the boilerplate out of the way:
+This reminded me a lot of similar undergrad assignments. Let's get the boilerplate out of
+the way:
 
 ```haskell
 import Data.Maybe
