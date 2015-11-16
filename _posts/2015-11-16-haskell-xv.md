@@ -19,7 +19,7 @@ is at least one such numbering.
 import Data.List (permutations, sort)
 import Data.Array
 
-vonkoch edges = [p | p <- nodes, conjecture p]
+vonkoch edges = filter conjecture nodes
     where
         n = length edges + 1
         nodes = permutations [1..n]
