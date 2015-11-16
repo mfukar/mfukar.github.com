@@ -33,7 +33,8 @@ vonkoch edges = filter conjecture nodes
 
 The last line is the meat of it, really: it computes the differences for all edges, under
 a numbering / permutation. There must be 0 duplicates in that list of differences, which
-is equivalent to requiring that all pairs of differences are not equal.
+is equivalent to requiring that all pairs of differences are not equal (as it appears on
+other solutions).
 
 ### Problem 93: An arithmetic puzzle
 
