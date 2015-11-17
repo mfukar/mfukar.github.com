@@ -16,7 +16,7 @@ those that satisfy the conjectured property. The conjecture is that for every tr
 is at least one such numbering.
 
 ```haskell
-import Data.List (permutations, sort)
+import Data.List (nub, permutations, sort)
 import Data.Array
 
 vonkoch edges = filter conjecture nodes
