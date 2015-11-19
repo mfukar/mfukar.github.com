@@ -119,7 +119,7 @@ according to our implementation of `fizzbuzz`. We evaluate the state 100 times, 
 all the values, print them, done! Sounds good in theory. Let's test:
 
 ```haskell
-flip evalState (replicateM 100 state_ints_fizzbuzz) 1
+evalState (replicateM 100 state_ints_fizzbuzz) 1
 ```
 
 [`replicateM`](http://hackage.haskell.org/package/base-4.8.1.0/docs/Control-Monad.html#v:replicateM)
