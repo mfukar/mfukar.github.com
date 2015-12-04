@@ -112,3 +112,6 @@ state-monad:
 kruskals-mst:
     slug: kruskals-mst
     name: Kruskal's algorithm
+sudoku:
+    slug: sudoku
+    name: Sudoku puzzles
