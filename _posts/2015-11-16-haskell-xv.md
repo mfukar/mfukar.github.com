@@ -151,7 +151,7 @@ main = mapM_ print $ Data.List.map (flip show_equation "") $ puzzle [2, 3, 5, 7,
 
 In this solution, we'll use the graph representations (and conversion functions) we
 implemented earlier, `combinations` from problem 26, and `canon` from problem 85. Then we
-can being searching for k-regular graphs of order n:
+can begin searching for k-regular graphs of order n:
 
 ```haskell
 regular :: Int -> Int -> [Graph Int]
