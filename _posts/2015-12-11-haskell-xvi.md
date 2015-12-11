@@ -115,7 +115,7 @@ boxes = unpack . (map columns) . pack
 3. Group the resulting elements in groups of BOXSIZE
 4. For each of the groups from (3), combine them by "zipping" BOXSIZE elements together
    (`transpose`). We now have our boxes in lists of lists.
-5. Now if we had created a structure to reflect our choices, we need to flatten it (not
+5. Now if we had created a structure to reflect #4, we need to flatten it (not
    the case with the C solution): `map concat . concat` does this
 
 Phew. That's a mouthful. It _seemed_ much easier in the C implementation, where all one
