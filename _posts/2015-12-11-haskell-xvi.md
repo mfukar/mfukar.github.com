@@ -232,9 +232,9 @@ Let's express the above in Haskell:
 complete :: Board Choices -> Bool
 complete = all (all is_single)
 
--- A board is "void" if any square contains no choices, i.e. unsolvable:
-void :: Board Choices -> Bool
-void = any (any null)
+-- A board is unsolvable if any square contains no choices:
+unsolvable :: Board Choices -> Bool
+unsolvable = any (any null)
 
 -- A row/column/box is "consistent" if it doesn't break the sudoku rules:
 consistent :: Row Choices -> Bool
@@ -244,9 +244,9 @@ consistent = nodupes . concat . filter is_single
 safe :: Board Choices -> Bool
 safe cb = all consistent (rows cb) && all consistent (columns cb) && all consistent (boxes cb)
 
--- A board is "blocked" if it's void or not safe:
+-- A board is "blocked" if it's unsolvable or not safe:
 blocked :: Board Choices -> Bool
-blocked b = void b || not (safe b)
+blocked b = unsolvable b || not (safe b)
 ```
 
 Now here's how our search function would look:
