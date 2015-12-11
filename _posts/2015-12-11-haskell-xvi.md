@@ -201,7 +201,7 @@ prune any more:
 
 ```haskell
 -- fixpoint recursively applies the function f to x as long as: x /= f(x)
--- The term for this in math is a "fixpoint", hence the dumb name:
+-- The term for this in math is a "fixpoint":
 fixpoint :: Eq a => (a -> a) -> a -> a
 fixpoint f x = if x == x' then x else fixpoint f x'
     where
