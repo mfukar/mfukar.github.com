@@ -166,7 +166,8 @@ collapse = cp . map cp
 So much simpler than C! Now we can tie everything together with a solver (which is not
 good enough, as it doesn't prune): `solve' = filter valid . collapse . choices`. Since it
 does no pruning, it's exceedingly slow: try to enumerate all the grids it considers for
-the example grid in the Haskell wiki.
+the example grid in the Haskell wiki. `collapse` will be useful later on to a lesser
+degree, so we'll keep it around for now - we don't mind much of its inefficiency.
 
 ## Pruning a search space
 
