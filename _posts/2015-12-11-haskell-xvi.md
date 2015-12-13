@@ -272,7 +272,7 @@ expand b = [rows1 ++ [row1 ++ [c] : row2] ++ rows2 | c <- cs]
 Then our implementation becomes:
 
 ```haskell
-solve = search . fixpoint prune . choices
+solve = search . prune . choices
 ```
 
 Seems all neat and tidy, doesn't it? Unfortunately, it's much slower than it could be.
