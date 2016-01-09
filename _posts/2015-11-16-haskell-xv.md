@@ -25,7 +25,7 @@ vonkoch edges = filter conjecture nodes
         -- minus one:
         n = length edges + 1
         nodes = permutations [1..n]
-        conjecture nodes = dists == nub dists
+        conjecture numbering = dists == nub dists
             where
             node_array = listArray (1, n) numbering
             dists = sort $ map (\(x, y) -> abs (node_array ! x - node_array ! y)) edges
