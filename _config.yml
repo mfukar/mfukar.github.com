@@ -1,4 +1,7 @@
-markdown: redcarpet
+markdown: kramdown
+kramdown:
+    input: GFM
+    syntax_highlighter: rouge
 highlight: rouge
 redcarpet:
     extensions: ['smart', 'autolink', 'tables', 'fenced_code_blocks', 'strikethrough', 'superscript', 'no_intra_emphasis', 'space_after_headers', 'footnotes']
