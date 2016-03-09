@@ -1,8 +1,13 @@
 markdown: kramdown
 kramdown:
     input: GFM
+    hard_wrap: false
     syntax_highlighter: rouge
-highlight: rouge
+    auto_ids: true
+    extensions:
+        - autolink
+        - footnotes
+        - smart
 redcarpet:
     extensions: ['smart', 'autolink', 'tables', 'fenced_code_blocks', 'strikethrough', 'superscript', 'no_intra_emphasis', 'space_after_headers', 'footnotes']
 comments:
