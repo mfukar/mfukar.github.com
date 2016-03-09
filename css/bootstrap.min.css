@@ -874,4 +874,4 @@ a.thumbnail{background-color:#dfdfdf;}a.thumbnail:hover{background-color:#bbbbbb
 .show{display:block;}
 .invisible{visibility:hidden;}
 .affix{position:fixed;}
-#content a:after {content: '⤴'; '⇗';}
+#content a[href^="http"]:after {content: '⤴'; '⇗';}
