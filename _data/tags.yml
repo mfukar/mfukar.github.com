@@ -115,3 +115,9 @@ kruskals-mst:
 sudoku:
     slug: sudoku
     name: Sudoku puzzles
+cpp:
+    slug: cpp
+    name: C++
+complexity:
+    slug: complexity
+    name: complexity
