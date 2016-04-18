@@ -1,17 +1,27 @@
 ---
 layout: post
-title: 99 sudoku problems in Haskell, 97
-tags: [99-problems, haskell, functional-programming, sudoku]
-year: 2015
-month: 12
-day: 11
+title: Defending against complexity
+tags: [complexity, cpp]
+year: 2016
+month: 04
+day: 14
 published: false
-summary: Cultural Learnings of 99 Problems for Make Benefit Glorious Language of Haskell
+summary:
 ---
+
+One quote that often comes up when (not seriously) discussing C++ is the following:
 
 > If you think C++ is not overly complicated, just what is a protected abstract virtual base pure virtual private destructor and when was the last time you needed one?
 >
 >    — Tom Cargill
+
+and then, of course, as any other non-serious discussion which is serious about not
+keeping it serious, it quietly dies down, not giving way into any serious thought. This
+post is not a joke.
+
+Firstly, Tom Cargill _really knows his stuff_. He's not just randomly sampling C++
+keywords in hopes of making a grammatically correct statement. To convince ourselves of
+this, let's try and rebuild Tom's construct, and then we'll value its usefullness.
 
 This
 [StackOverflow](http://stackoverflow.com/questions/3618760/c-protected-abstract-virtual-base-pure-virtual-private-destructor)
@@ -45,4 +55,3 @@ int main()
     return 0;
 }
 ```
-
