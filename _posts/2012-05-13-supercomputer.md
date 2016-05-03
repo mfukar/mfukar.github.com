@@ -5,7 +5,7 @@ tags: <++>
 year: 2012
 month: 05
 day: 13
-published: false
+published: true
 summary: Solution for the PCTF 2012 puzzle "supercomputer"
 ---
 
