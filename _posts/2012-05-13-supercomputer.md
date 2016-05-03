@@ -51,8 +51,6 @@ are used for other stuff as well).  For the second key, the slow function is at 
 and is doing a multiplication by addition. We [patch](https://gist.github.com/2687583) it
 as well:
 
-and we get:
-
 > Hooray! The second key is f811f0e8a1f9196e27eef9e23eff6367
 
 Alright. For the third key, the slow function is at 0x4010b8, and it's tricky. After
