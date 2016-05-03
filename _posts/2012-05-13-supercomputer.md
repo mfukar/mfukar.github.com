@@ -14,7 +14,9 @@ Kinda late to the party with those four, but here goes. The supercomputer binary
 respectively. Didn't solve them on time, but it's a good reversing challenge.
 
 > Supercomputer 1 [50] Pirating
+>
 > Computing one big number is hard, but apparently the robots can do four? Please help us!
+>
 > What is the first number?
 
 `main()` is at 0x400674. A state vector is initialized, seen below:
@@ -24,8 +26,8 @@ respectively. Didn't solve them on time, but it's a good reversing challenge.
 and the fun begins. By running the executable you can see a "progress report" with dots
 and first thing we notice are calls to `sleep`. Did I mention the progress is super slow?
 Apparently, you have to speed it up. Being the naive fellow I am, I initially just
-`LD_PRELOAD`ed them out, but the process kept slowing down, forcing me to be clever. We nop
-the calls to `sleep`, and resort to callgrind, which shows us the (first) culprit:
+`LD_PRELOAD`ed them out, but the process kept slowing down, forcing me to be clever. We
+nop the calls to `sleep`, and resort to callgrind, which shows us the (first) culprit:
 
 ![First offender](/images/41028268-first_offender.png)
 
@@ -42,11 +44,12 @@ state[1])` and `(state[2] + state[3])` is output as the first key, which is:
 > Yay! The first key is 414e0d423f5fcd195a579f95f1ff6525
 
 For the key generation, there are multiple functions involved (there are jump tables at
-addresses 0x601ce0 and 0x401808). However, we don't need to mess with all of them - just the very
-slow ones. The key update functions are selected with a congruence modulo relation (look
-for `movabs` & `imul` sequences in the disassembly, there are a handful and are used for other
-stuff as well).  For the second key, the slow function is at 0x400edc, and is doing a
-multiplication by addition. We patch it as well: https://gist.github.com/2687583
+addresses 0x601ce0 and 0x401808). However, we don't need to mess with all of them - just
+the very slow ones. The key update functions are selected with a congruence modulo
+relation (look for `movabs` & `imul` sequences in the disassembly, there are a handful and
+are used for other stuff as well).  For the second key, the slow function is at 0x400edc,
+and is doing a multiplication by addition. We [patch](https://gist.github.com/2687583) it
+as well:
 
 and we get:
 
@@ -54,9 +57,7 @@ and we get:
 
 Alright. For the third key, the slow function is at 0x4010b8, and it's tricky. After
 another slow multiplication, it performs a division by repeatedly adding a negative in
-two's complement number (0xfffffffef4143e05). We can do better than that: https://gist.github.com/2687646
-
-which nets:
+two's complement number (0xfffffffef4143e05). We can do [better than that](https://gist.github.com/2687646):
 
 > Hooray! The third key is c9e6d35ed6007b35f7d01a98f6d548fb
 
@@ -66,8 +67,7 @@ decided to take a step back, to its callers. They are two, in a single function 
 0x401330, which is in turn called by 0x4011be (via a jump table). If you notice the locals
 at runtime, you'll see these functions operate on temporary key vectors and aren't used to
 update the original, as far as I could tell. They do go on for an obscene amount of
-iterations, though, so let's just skip them altogether: https://gist.github.com/2687713
-
+iterations, though, so let's just [skip them altogether](https://gist.github.com/2687713),
 and after a short while..
 
 > Congratz! The last key is f9b02fabc4b866288d7c4c5bbcd5507e
