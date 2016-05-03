@@ -458,6 +458,7 @@
                 width: 7.5em;
             }
             
+            .level.expert .bar::after,
             .level.master .bar::after,
             .level.native.speaker .bar::after {
                 background: #59C596;
@@ -527,13 +528,13 @@
                 .institution::before,
                 .organization::before,
                 .awarder::before {
-                    content: "|";
+                    content: "| ";
                 }
             
                 .header-left {
                     float: left;
                     width: 70%;
-                    word-break: break-all;
+                    word-break: normal;
                 }
             
                 .section header .date {
@@ -675,8 +676,7 @@
     <body>
         <div id="resume">
             <header id="header" class="clear">
-                <img class="picture" src="mfukar.png" alt="Michael Foukarakis" />
-                <div class="middle">
+                <div>
                     	<h1 class="name">Michael Foukarakis</h1>
 
                     	<h2 class="label">R&amp;D Engineer</h2>
@@ -747,10 +747,10 @@ Agia Paraskevi,
                 <section id="skills">
                     <div class="item">
                         	<h3 class="name">
-								Systems programming
+								Systems Programming
 							</h3>
 
-                        <div class="level master">	<em>master</em>
+                        <div class="level expert">	<em>expert</em>
 
                             <div class="bar"></div>
                         </div>
@@ -771,7 +771,7 @@ Agia Paraskevi,
 								Operating Systems
 							</h3>
 
-                        <div class="level master">	<em>master</em>
+                        <div class="level expert">	<em>expert</em>
 
                             <div class="bar"></div>
                         </div>
@@ -863,7 +863,7 @@ Agia Paraskevi,
                         <div class="summary">
                             <p>
                                 <p>Security researcher as part of the IO Active team, performing code audits,
-                                    exploit development, and team lead for a red team supporting the development
+                                    exploit development. Team leader for a red team supporting the development
                                     of popular mobile banking applications.</p>
                             </p>
                         </div>
@@ -933,7 +933,7 @@ Agia Paraskevi,
                         <ul class="highlights">
                             <li>Championed and delivered a complete reporting subsystem for the Flexi
                                 Network Gateway</li>
-                            <li>Took on responsibility for implementation, maintenance, and optimisation
+                            <li>Took on responsibility for the implementation, maintenance, and optimisation
                                 of inhouse cryptography libraries</li>
                         </ul>
                     </div>
@@ -959,8 +959,8 @@ Agia Paraskevi,
                         <div class="summary">
                             <p>
                                 <p>Software engineering, reverse engineering and analysis of advanced malware,
-                                    investigating stealth distribution techniques, and other information security
-                                    research as part of the Cyber Defense Directorate.</p>
+                                    investigation of stealth distribution techniques, and other information
+                                    security research as part of the Cyber Defense Directorate.</p>
                             </p>
                         </div>
                     </div>
@@ -1009,7 +1009,7 @@ Agia Paraskevi,
 											<span class="fa fa-caret-down"></span>
 </span>
                         <div class="header-left">
-                            <div class="position">contributor</div>
+                            <div class="position">Contributor</div>
                             <div class="organization">CorsixTH</div>
                         </div>
                         <div class="date">	<span class="startDate">
@@ -1063,7 +1063,7 @@ Agia Paraskevi,
 											<span class="fa fa-caret-right"></span>
 </span>
                         <div class="header-left">
-                            <div class="position">contributor</div>
+                            <div class="position">Contributor</div>
                             <div class="organization">John the Ripper</div>
                         </div>
                         <div class="date">	<span class="startDate">
@@ -1090,7 +1090,7 @@ Agia Paraskevi,
 											<span class="fa fa-caret-right"></span>
 </span>
                         <div class="header-left">
-                            <div class="position">co-creator</div>
+                            <div class="position">Co-creator</div>
                             <div class="organization">anontool</div>
                         </div>
                         <div class="date">	<span class="startDate">
@@ -1105,9 +1105,9 @@ Agia Paraskevi,
                     <div class="item display none" style="opacity:0">
                         <div class="summary">
                             <p>
-                                <p>Anontool is a FOSS packet trace anonymization framework. Michael worked
-                                    on anonymization as part of his MSc thesis, cowrote the PoC API and took
-                                    over maintenance. Anontool is no longer maintained.</p>
+                                <p>Anontool is a FOSS packet trace anonymization framework. I worked on anonymization
+                                    as part of my MSc thesis, cowrote the PoC API and took over maintenance.
+                                    Anontool is no longer maintained.</p>
                             </p>
                         </div>
                         <div class="website">	<a href="https://github.com/mfukar/anontool">https://github.com/mfukar/anontool</a>
@@ -1119,7 +1119,7 @@ Agia Paraskevi,
 </span>
                         <div class="header-left">
                             <div class="position">Red Team</div>
-                            <div class="organization">1st Greek National Cyber Defense exercise &#x27;Panoptis 2010&#x27;</div>
+                            <div class="organization">1st Greek National Cyber Defense exercise - Panoptis 2010</div>
                         </div>
                         <div class="date">	<span class="startDate">
 											May 2010
@@ -1161,7 +1161,7 @@ Agia Paraskevi,
                                     with ~1.8m people reached.</p>
                             </p>
                         </div>
-                        <div class="website">	<a href="http://stackoverflow.com/">http://stackoverflow.com/</a>
+                        <div class="website">	<a href="http://stackoverflow.com/users/149530/michael-foukarakis">http://stackoverflow.com/users/149530/michael-foukarakis</a>
 
                         </div>
                     </div>
@@ -1273,8 +1273,8 @@ Agia Paraskevi,
                     <div class="item display" style="opacity:1">
                         <div class="summary">
                             <p>
-                                <p>Awarded a postgraduate scholarship for having the best marks for the duration
-                                    of my M.Sc. studies, two consecutive times</p>
+                                <p>During my M.Sc. studies, I was awarded a yearly postgraduate scholarship
+                                    for having the best marks, two consecutive times.</p>
                             </p>
                         </div>
                     </div>
