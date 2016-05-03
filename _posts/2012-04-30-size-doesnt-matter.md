@@ -67,20 +67,20 @@ class shaext:
 
     def init(self):
         count = (self.keylen + len(self.origtext)) * 8
-        index = (count &gt;&gt; 3) &amp; 0x3FL
+        index = (count >> 3) &amp; 0x3FL
         padLen = 120 - index
-        if index &lt; 56:
+        if index < 56:
             padLen = 56 - index
         padding = '\x80' + '\x00' * 63
 
-        self.input = self.origtext + padding[:padLen] + struct.pack('&gt;Q', count)
+        self.input = self.origtext + padding[:padLen] + struct.pack('<Q', count)
         count = (self.keylen + len(self.input)) * 8
         self.impl = sha256.sha256()
         self.impl._sha['count_lo'] = count
         self.impl._sha['count_hi'] = 0
 
         _digest = self.origsig.decode("hex")
-        self.impl._sha['digest'] = [x for x in struct.unpack("&gt;IIIIIIII", _digest)]
+        self.impl._sha['digest'] = [x for x in struct.unpack("<IIIIIIII", _digest)]
 
     def add(self, addtext):
         self.addtext = self.addtext + addtext
