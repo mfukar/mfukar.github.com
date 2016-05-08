@@ -121,3 +121,9 @@ cpp:
 complexity:
     slug: complexity
     name: complexity
+academia:
+    slug: academia
+    name: academia
+repeatability:
+    slug: repeatability
+    name: repeatability
