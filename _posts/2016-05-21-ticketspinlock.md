@@ -28,7 +28,7 @@ guarantees.
 
 We'll sketch a C++ implementation below. We'll use two `std::atomic_size_t` variables as
 counters for the ticket number currently served and the ticket number handed out to the
-next arriving thread. The implementation may not particularly optimized - I haven't
+next arriving thread. The implementation may not be particularly optimized - I haven't
 profiled any of this - and it is aimed at x86. We will refer to the particulars as we go
 along. Let's begin:
 
@@ -69,11 +69,11 @@ static_assert(sizeof(TicketSpinLock) == 2*CACHELINE_SIZE,
 
 What happens when the ticket dispenser overflows? We can quickly see that overflow is
 catastrophic only in the case where the number of threads waiting on the lock is less than
-or equal to the maximum value representable by the counter's underlying type.
-Assume a 3-bit counter, and 8 threads competing for the lock. The condition `now_serving
-!= ticket` is always false for the next thread in line. If we were to add one more thread,
-the `next_ticket` counter can now reach the same value `now_serving` has. This is very
-easy to see on a piece of paper:
+or equal to the maximum value representable by the counter's underlying type.  Assume a
+3-bit counter, and 8 threads competing for the lock. The condition `now_serving != ticket`
+is always false for the next thread in line. If we were to add one more thread, the
+`next_ticket` counter can now reach the same value `now_serving` has. This is very easy to
+see on a piece of paper:
 
 ```
    now_serving   next_ticket
