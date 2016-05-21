@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Ticket spinlocks
-tags: [ticket-spinlock, linux, synchronisation]
+tags: [ticket-spinlock, linux, synchronization]
 year: 2016
 month: 05
 day: 21

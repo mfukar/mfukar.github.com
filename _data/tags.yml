@@ -127,3 +127,12 @@ academia:
 repeatability:
     slug: repeatability
     name: repeatability
+ticket-spinlock:
+    slug: ticket-spinlock
+    name: ticket locks
+linux:
+    slug: linux
+    name: Linux
+synchronization:
+    slug: synchronization
+    name: synchronization
