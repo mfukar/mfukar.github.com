@@ -79,7 +79,7 @@ see on a piece of paper:
    now_serving   next_ticket
         |             |
         V             V
-... 3 4 5 6 7 0 1 2 3 4 5 ...
+... 0 1 2 3 4 5 6 7 0 1 2 ...
         |_____________|
            8 threads
 ```
