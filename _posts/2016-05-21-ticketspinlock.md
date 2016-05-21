@@ -137,13 +137,13 @@ lock in the article above. This approach kills the ticket spinlock. Observe:
 * A must always wait at least as long as B
 * B must always wait at least as long as C
 
-Therefore, as delays accumulate, most of the thread execution time is spent waitign for
+Therefore, as delays accumulate, most of the thread execution time is spent waiting for
 the lock. This is undesirable. The ticket lock provides us with some extra information
 that the test-and-set lock doesn't, and it helps us make a decision: the number of
 processors already waiting on the lock. This can be obtained by calculating the difference
 `my_ticket - now_serving`. Now, as Crummey & Scott observe, we need an estimate of how
 long it will take _each_ processor to release the lock. If this time is accurately known,
-great, but it's unlikely in practice. A common occurence for estimating it is the
+great, but it's unlikely in practice. A common occurrence for estimating it is the
 _expected average_, which is a risky choice: if the processors in line for the lock
 average less than the expected amount, the waiting processor will delay too long, and thus
 slow down all threads. A better choice is the _minimum_ time that a processor may hold the
