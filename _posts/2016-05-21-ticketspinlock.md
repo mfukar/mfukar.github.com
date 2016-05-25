@@ -129,7 +129,7 @@ Since we intend for contention to be rare, however, we can add functionality in 
 spinlock's slow path to handle the case of high contention.
 
 A common approach is exponential back-off. This is the case with the simple test-and-set
-lock in the article above. This approach kills the ticket spinlock. Observe:
+lock in the aforementioned paper. This approach kills the ticket spinlock. Observe:
 
 * Let A be the thread with `my_ticket == now_serving + 3`
 * Let B be the thread with `my_ticket == now_serving + 2`
