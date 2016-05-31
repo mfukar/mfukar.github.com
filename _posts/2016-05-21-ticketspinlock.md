@@ -69,11 +69,11 @@ static_assert(sizeof(TicketSpinLock) == 2*CACHELINE_SIZE,
 
 What happens when the ticket dispenser overflows? We can quickly see that overflow is
 catastrophic only in the case where the number of threads waiting on the lock is strictly
-greater than the maximum value representable by the counter's underlying type.  Assume a
-3-bit counter, and 8 threads competing for the lock. The condition `now_serving != ticket`
-is always false for the next thread in line. If we were to add one more thread, the
-`next_ticket` counter can now reach the same value `now_serving` has. This is very easy to
-see on a piece of paper:
+greater than the maximum number of values representable by the counter's underlying type.
+Assume a 3-bit counter, and 8 threads competing for the lock. The condition `now_serving
+!= ticket` is always false for the next thread in line. If we were to add one more thread,
+the `next_ticket` counter can now reach the same value `now_serving` has. This is very
+easy to see on a piece of paper:
 
 ```
    now_serving   next_ticket
