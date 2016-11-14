@@ -21,7 +21,7 @@ post is not a joke.
 
 Firstly, Tom Cargill _really knows his stuff_. He's not just randomly sampling C++
 keywords in hopes of making a grammatically correct statement. To convince ourselves of
-this, let's try and rebuild Tom's construct, and then we'll value its usefullness.
+this, let's try and rebuild Tom's construct, and then we'll value its usefulness.
 
 This
 [StackOverflow](http://stackoverflow.com/questions/3618760/c-protected-abstract-virtual-base-pure-virtual-private-destructor)
