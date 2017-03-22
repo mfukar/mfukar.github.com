@@ -79,7 +79,7 @@ use StackOverflow if you want to be successful at this job.
 ## ~~Loved~~, Dreaded, ~~Wanted~~
 
 Erlang is dreaded by 60% of the developers taking the survey. In the same ballpark are C,
-Objective-C, Common Lisp, and R. 45% for Haskell That's just baffling.
+Objective-C, Common Lisp, and R. 45% for Haskell. That's just baffling.
 
 ## Loved, ~~Dreaded, Wanted~~
 
