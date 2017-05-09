@@ -136,3 +136,12 @@ linux:
 synchronization:
     slug: synchronization
     name: synchronization
+statistics:
+    slug: statistics
+    name: statistics
+survey:
+    slug: survey
+    name: survey
+stackoverflow:
+    slug: stackoverflow
+    name: stackoverflow
