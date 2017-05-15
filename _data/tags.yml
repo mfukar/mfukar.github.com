@@ -145,3 +145,9 @@ survey:
 stackoverflow:
     slug: stackoverflow
     name: stackoverflow
+stupid:
+    slug: stupid
+    name: stupid
+useless:
+    slug: useless
+    name: useless
