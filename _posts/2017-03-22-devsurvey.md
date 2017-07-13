@@ -40,7 +40,7 @@ years. Newbies outnumber the gurus on SO.
 
 Only 11.4% of developers taking the survey identify as something other than male. Only
 25.6% don't identify as white/european. If only we could ask developers who aren't using
-SO why they stir clear.
+SO why they steer clear.
 
 ## Educational Attainment
 
