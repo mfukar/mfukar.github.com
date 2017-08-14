@@ -12,6 +12,8 @@
 		<link href="/css/bootstrap-responsive.min.css" rel="stylesheet" />
 		<!-- syntax highlighting CSS -->
 		<link rel="stylesheet" href="/css/syntax.css" type="text/css" />
+		<!-- reading position indicator -->
+		<link rel="stylesheet" href="/css/rpi.css" type="text/css" />
 		<!-- RSS -->
 		<link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml" />
 		<link rel="stylesheet" href="/css/screen.css" type="text/css" media="screen, projection" />
@@ -20,6 +22,12 @@
 	</head>
 
 	<body>
+		<progress value="0" id="rpi" class="single">
+			<div class="progress-container">
+				<span class="progress-bar"></span>
+			</div>
+		</progress>
+
 		<div class="navbar">
 			<div class="navbar-inner">
 				<a class="brand" href="/index.html">mfukar's ramblings</a>
@@ -59,6 +67,6 @@
 		</footer>
 
 		<script src="http://code.jquery.com/jquery-latest.min.js"></script>
-		<script src="/js/bootstrap.min.js"></script>
+		<script src="/js/rpi.js" type="text/javascript"></script>
 	</body>
 </html>
