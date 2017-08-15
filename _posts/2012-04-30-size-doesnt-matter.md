@@ -67,7 +67,7 @@ class shaext:
 
     def init(self):
         count = (self.keylen + len(self.origtext)) * 8
-        index = (count >> 3) &amp; 0x3FL
+        index = (count >> 3) & 0x3FL
         padLen = 120 - index
         if index < 56:
             padLen = 56 - index
