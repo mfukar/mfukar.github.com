@@ -63,8 +63,8 @@ struct TicketSpinLock {
 
     /**
      * Since we're in the critical section, no one can modify `now_serving`
-     * but this thread. We just want the update to be atomic. Therefore we can use a simple store
-     * instead of `now_serving.fetch_add()`:
+     * but this thread. We just want the update to be atomic. Therefore we can use
+     * a simple store instead of `now_serving.fetch_add()`:
      */
     void leave() {
         const auto successor = now_serving.load(std::memory_order_relaxed) + 1;
@@ -94,7 +94,7 @@ strictly greater than the maximum number of values representable by the counter'
 twice). Assume a 3-bit counter, and 8 threads competing for the lock. The condition `now_serving !=
 ticket` is always false for the next thread in line. _Only_ if we were to add one more thread, the
 `next_ticket` counter can now reach the same value `now_serving` has. This is very easy to see on a
-napkin:
+piece of paper:
 
 ```
    now_serving   next_ticket
@@ -103,18 +103,20 @@ napkin:
 ... 0 1 2 3 4 5 6 7 0 1 2 ...
          \___________/
            8 threads
+           holding one ticket each
 ```
 
 This is a useful observation in that, when memory is at a premium, we can use shorter width counters
 as long as we can guarantee an upper bound on the number of threads. This is not a typical scenario,
-however - more of an interesting factoid.
+however - more of an interesting factoid. When would the number of ticket locks in an application be
+as great as to make this saving significant?
 
 ## spin wait what?
 
 We haven't said anything about the `spin_wait` function. Ideally, a thread attempting to
 `enter` the critical section spins for a threshold of attempts, and while it is doing so
-it can incur some pretty heavy performance penalties. The [Intel instruction
-reference](http://www.intel.com/Assets/PDF/manual/325383.pdf) says:
+it can incur some pretty heavy performance penalties. To illustrate, see the [Intel instruction
+reference](http://www.intel.com/Assets/PDF/manual/325383.pdf) which says:
 
 > When executing a “spin-wait loop,” a Pentium 4 or Intel Xeon processor suffers a severe
 > performance penalty when exiting the loop because it detects a possible memory order
@@ -136,9 +138,10 @@ static inline void spin_wait(void) {
 }
 ```
 
-It's good to note that `rep; nop` is a synonym for `pause`, and it appears in some implementations,
-e.g.  [Linux](http://lxr.free-electrons.com/source/arch/x86/include/asm/processor.h#L562). Note that
-`rep` here is not a prefix of `nop`.
+Fantastic. It's good to note that `rep; nop` is a synonym for `pause`, and it appears in some
+implementations, e.g.
+[Linux](http://lxr.free-electrons.com/source/arch/x86/include/asm/processor.h#L562). Note that `rep`
+here is not a prefix of `nop`.
 
 ## Contention and proportional back-off
 
