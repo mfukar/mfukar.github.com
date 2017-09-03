@@ -170,6 +170,8 @@ _each_ processor to release the lock. If this time is accurately known, great, b
 practice. A common occurrence for estimating it called "proportional back-off", and it uses the
 _expected average_, which is a risky choice: if the processors in line for the lock average less
 than the expected amount, the waiting processor will delay too long, and thus slow down all threads.
+The very nature of the mean implies this is a scenario happening about half the time, and thus makes
+it quite undesirable.
 
 The better choice is the _minimum_ time that a processor may hold the lock:
 
