@@ -5,7 +5,7 @@ tags: [ticket-spinlock, linux, synchronization, cpp]
 year: 2017
 month: 09
 day: 04
-published: false
+published: true
 summary: Ticket spinlocks, what are they, and how are they used?
 ---
 
