@@ -151,3 +151,6 @@ stupid:
 useless:
     slug: useless
     name: useless
+parallelism:
+    slug: parallelism
+    name: parallel systems
