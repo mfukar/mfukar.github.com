@@ -39,8 +39,8 @@ We'll sketch a C++ implementation below.
 
 To implement the ticket number currently served and the ticket number handed out to the _next
 arriving thread_, we'll use two `std::atomic_size_t` variables. The implementation is targeted at
-x86, but may not be particularly optimized - I haven't profiled any of this. We will refer to the
-particulars as we go along. Let's begin:
+x86, and I'll point out exactly where this makes a difference. Do not consider this to be optimized
+- I haven't profiled any of it. We will refer to the particulars as we go along. Let's begin:
 
 ```cpp
 struct TicketSpinLock {
@@ -113,10 +113,10 @@ as great as to make this saving significant?
 
 ## spin wait what?
 
-We haven't said anything about the `spin_wait` function. Ideally, a thread attempting to
-`enter` the critical section spins for a threshold of attempts, and while it is doing so
-it can incur some pretty heavy performance penalties. To illustrate, see the [Intel instruction
-reference](http://www.intel.com/Assets/PDF/manual/325383.pdf) which says:
+We haven't said anything about the `spin_wait` function. Ideally, a thread attempting to `enter` the
+critical section spins for a threshold of attempts, and while it is doing so it can incur some
+pretty heavy performance penalties. To illustrate this point on an x86 CPU, let's have a look at the
+[Intel instruction reference](http://www.intel.com/Assets/PDF/manual/325383.pdf) which says:
 
 > When executing a “spin-wait loop,” a Pentium 4 or Intel Xeon processor suffers a severe
 > performance penalty when exiting the loop because it detects a possible memory order
