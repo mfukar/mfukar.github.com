@@ -91,7 +91,7 @@ What happens when the ticket dispenser overflows? With a bit of napkin sketching
 that overflow is catastrophic only in the case where the number of threads waiting on the lock is
 strictly greater than the maximum number of values representable by the counter's underlying type
 (otherwise, there is a coding error, and at least one thread is attempting to grab the same lock
-twice). Assume a 3-bit counter, and 8 threads competing for the lock. The condition `now_serving !=
+twice[^1]). Assume a 3-bit counter, and 8 threads competing for the lock. The condition `now_serving !=
 ticket` is always false for the next thread in line. _Only_ if we were to add one more thread, the
 `next_ticket` counter can now reach the same value `now_serving` has. This is very easy to see on a
 piece of paper:
@@ -215,3 +215,4 @@ What are the tradeoffs of the ticket lock?
 The last point is addressed by MCS (see the linked papers), which sounds even more
 exciting! Let's have a look at them next.
 
+[^1]: There are multiple ways to find such problems with locks. For example, clang provides the [Thread Safety Analysis](https://clang.llvm.org/docs/ThreadSafetyAnalysis.html) extension.
