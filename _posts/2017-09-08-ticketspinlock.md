@@ -39,8 +39,8 @@ We'll sketch a C++ implementation below.
 
 To implement the ticket number currently served and the ticket number handed out to the _next
 arriving thread_, we'll use two `std::atomic_size_t` variables. The implementation is targeted at
-x86, and I'll point out exactly where this makes a difference. Do not consider this to be optimized
-- I haven't profiled any of it. We will refer to the particulars as we go along. Let's begin:
+x86, and I'll point out exactly where this makes a difference. Do not consider this to be
+optimized - I haven't profiled any of it. We will refer to the particulars as we go along. Let's begin:
 
 ```cpp
 struct TicketSpinLock {
