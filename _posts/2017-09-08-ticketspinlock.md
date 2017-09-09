@@ -143,7 +143,7 @@ implementations, e.g.
 [Linux](http://lxr.free-electrons.com/source/arch/x86/include/asm/processor.h#L562). Note that `rep`
 here is not a prefix of `nop`.
 
-## Contention and proportional back-off
+## Handling contention
 
 As it is, the lock is implemented to ignore contention. This allows the API to be simple, the common
 case (lack of contention) to be fast, and forces us to handle contention at the level of the data
