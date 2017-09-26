@@ -154,3 +154,6 @@ useless:
 parallelism:
     slug: parallelism
     name: parallel systems
+mcs-lock:
+    slug: mcs-lock
+    name: MCS lock
