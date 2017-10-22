@@ -157,3 +157,9 @@ parallelism:
 mcs-lock:
     slug: mcs-lock
     name: MCS lock
+disclosure:
+    slug: disclosure
+    name: disclosure
+bullshit:
+    slug: bullshit
+    name: bullshit
