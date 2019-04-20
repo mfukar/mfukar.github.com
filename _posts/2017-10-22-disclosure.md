@@ -50,7 +50,7 @@ innocent people who live under oppressive regimes in mind while performing your 
 * Gaslight disclosure: when your bug can be used to successfully start a fire
 * Controlled disclosure: when your bug report demonstrates the bug has successfully been used to
   start a fire
-* Counselling disclosure: when your bug points out a code idiom that originated at least 4 decades
+* Counselling disclosure: when your report points out a code idiom that originated at least 4 decades
   ago and the bug would be avoided if it were used
 * Preferential disclosure: when you disclose only to a group of people you like, and at least one
   vendor that doesn't like you is affected
