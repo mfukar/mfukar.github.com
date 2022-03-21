@@ -163,3 +163,9 @@ disclosure:
 bullshit:
     slug: bullshit
     name: bullshit
+consistency:
+    slug: consistency
+    name: consistency
+concurrency:
+    slug: concurrency
+    name: concurrency
