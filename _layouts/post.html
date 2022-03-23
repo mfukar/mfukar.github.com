@@ -21,16 +21,16 @@ layout: secondary
 
 {% assign post = page %}
 {% if post.tags.size > 0 %}
-    {% capture tags_content %}Tagged {% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
-    {% for post_tag in post.tags %}
+{% capture tags_content %}Tagged {% if post.tags.size == 1 %}<i class="fa fa-tag"></i>{% else %}<i class="fa fa-tags"></i>{% endif %}: {% endcapture %}
+	{% for post_tag in post.tags %}
 		{% assign tag = site.data.tags[post_tag] %}
-        {% if tag %}
-            {% capture tags_content_temp %}{{ tags_content }}<a href="/blog/tag/{{ tag.slug }}/">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
-            {% assign tags_content = tags_content_temp %}
-        {% endif %}
-    {% endfor %}
+		{% if tag %}
+		{% capture tags_content_temp %}{{ tags_content }}<a href="/blog/tag/{{ tag.slug }}/">{{ tag.name }}</a>{% if forloop.last == false %}, {% endif %}{% endcapture %}
+		{% assign tags_content = tags_content_temp %}
+		{% endif %}
+	{% endfor %}
 {% else %}
-    {% assign tags_content = '' %}
+{% assign tags_content = '' %}
 {% endif %}
 
 	<div id="tags" style="margin: 50px 0px">
@@ -38,8 +38,5 @@ layout: secondary
 	</div>
 
 	<!-- the tweet button -->
-	<a href="https://twitter.com/share"  class="twitter-share-button"
-		data-url="http://mfukar.github.io{{page.url}}">Tweet this</a>
-	<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
-	<!-- end of tweet button -->
+	<a class="twitter-share-button" href="https://twitter.com/intent/tweet?text=http://mfukar.github.io{{page.url}}"><script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
