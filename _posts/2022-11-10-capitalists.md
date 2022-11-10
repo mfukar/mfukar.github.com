@@ -63,8 +63,8 @@ Unfortunately, the company does not seem to be facing anything but public outcry
 forgotten. This means the developers behind this will face no consequences, and thus continue their
 damaging practice unabated. On and on, we move on to make everything worse.
 
-* <a id="ref1">https://www.forbes.com/sites/tonifitzgerald/2018/12/11/yes-you-are-seeing-more-commercials-than-ever-before/</a>
-* <a id="ref2">https://blogs.opera.com/news/2022/05/how-much-time-do-you-waste-on-web-ads-weekly/</a>
-* <a id="ref3">https://hbr.org/2021/04/algorithmic-nudges-dont-have-to-be-unethical</a>
-* <a id="ref4">https://www.bbc.com/news/world-europe-63499057</a>
-* <a id="ref5">"Kristallnacht". The Hutchinson Encyclopedia. Hutchinson Encyclopedias (18th ed.). London: Helicon. p. 1,199</a>
+* <a id="ref1">1.</a>https://www.forbes.com/sites/tonifitzgerald/2018/12/11/yes-you-are-seeing-more-commercials-than-ever-before/
+* <a id="ref2">2.</a>https://blogs.opera.com/news/2022/05/how-much-time-do-you-waste-on-web-ads-weekly/
+* <a id="ref3">3.</a>https://hbr.org/2021/04/algorithmic-nudges-dont-have-to-be-unethical
+* <a id="ref4">4.</a>https://www.bbc.com/news/world-europe-63499057
+* <a id="ref5">5.</a>"Kristallnacht". The Hutchinson Encyclopedia. Hutchinson Encyclopedias (18th ed.). London: Helicon. p. 1,199
