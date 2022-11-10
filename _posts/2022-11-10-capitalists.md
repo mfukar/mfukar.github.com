@@ -19,7 +19,7 @@ extract every penny from every living thing that could conceivably carry a penny
 As corporations turn to exploitation of the vast amount of data tracks that we leave all over the
 internet, they resort not only to sophisticated methods of correlating and collating data in order
 to identify us and determine our behaviours and preferences, but also more aggressively push old and
-crude methods like advertising. Advertising takes [more time](#ref1) [than ever](#ref2) and email
+crude methods like advertising. Advertising takes more time[^1] than ever[^2] and email
 spam has won, in spite of the millions of web pages dedicated to teaching you how to block it.
 
 One particularly malicious method that a software developer will eagerly exploit with no second
@@ -28,17 +28,17 @@ from software engineering - in this case push-pull architectures - and apply it 
 the most benign of situations, this would be a computer scientist thinking the polynomial hierarchy
 means something about the universe, and posting their crackpot theories on /r/physics, and promptly
 getting their post removed and ridiculed, as they should. In the most damaging and lingering cases,
-however, they turn a minor concept into [mass harassment and disruption](#ref3).
+however, they turn a minor concept into mass harassment and disruption [^3].
 
 However, the lack of meaningful self-reflection, on a personal and collective level, means that the
 techies cannot stop there. They can do worse, by taking a psychological trick and applying intent to
 it. In this case, antisemitic intent. On November 9 2022, customers of KFC in Germany saw a
-[message](#ref4) that said: "It's memorial day for Kristallnacht! Treat yourself with more tender
+message[^4] that said: "It's memorial day for Kristallnacht! Treat yourself with more tender
 cheese on your crispy chicken. Now at KFCheese!"
 
 'Kristallnacht' was a pogrom against Jewish people carried out by the Nazi party's Sturmabteilung
-paramilitary and Schutzstaffel  paramilitary forces and the Hitler Youth. Historians [view
-Kristallnacht as a prelude](#ref5) to the Final Solution and the murder of six million Jews during the
+paramilitary and Schutzstaffel  paramilitary forces and the Hitler Youth. Historians view
+Kristallnacht as a prelude[^5] to the Final Solution and the murder of six million Jews during the
 Holocaust. It is not an occasion celebrated in Germany, by any German state. I believe it goes
 without saying that it's not a celebration to Jewish people either, no matter their location.
 
@@ -63,8 +63,8 @@ Unfortunately, the company does not seem to be facing anything but public outcry
 forgotten. This means the developers behind this will face no consequences, and thus continue their
 damaging practice unabated. On and on, we move on to make everything worse.
 
-* <a id="ref1">1.</a>https://www.forbes.com/sites/tonifitzgerald/2018/12/11/yes-you-are-seeing-more-commercials-than-ever-before/
-* <a id="ref2">2.</a>https://blogs.opera.com/news/2022/05/how-much-time-do-you-waste-on-web-ads-weekly/
-* <a id="ref3">3.</a>https://hbr.org/2021/04/algorithmic-nudges-dont-have-to-be-unethical
-* <a id="ref4">4.</a>https://www.bbc.com/news/world-europe-63499057
-* <a id="ref5">5.</a>"Kristallnacht". The Hutchinson Encyclopedia. Hutchinson Encyclopedias (18th ed.). London: Helicon. p. 1,199
+[^1]: <a href="https://www.forbes.com/sites/tonifitzgerald/2018/12/11/yes-you-are-seeing-more-commercials-than-ever-before/">Forbes</a>
+[^2]: <a href="https://blogs.opera.com/news/2022/05/how-much-time-do-you-waste-on-web-ads-weekly/">Opera blog</a>
+[^3]: <a href="https://hbr.org/2021/04/algorithmic-nudges-dont-have-to-be-unethical">Harvard Business Review</a>
+[^4]: <a href="https://www.bbc.com/news/world-europe-63499057">BBC</a>
+[^5]: "Kristallnacht". The Hutchinson Encyclopedia. Hutchinson Encyclopedias (18th ed.). London: Helicon. p. 1,199
