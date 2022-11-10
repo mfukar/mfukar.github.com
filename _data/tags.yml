@@ -169,3 +169,12 @@ consistency:
 concurrency:
     slug: concurrency
     name: concurrency
+capitalism:
+    slug: capitalism
+    name: capitalism
+bugs:
+    slug: bugs
+    name: bugs
+ethics:
+    slug: ethics
+    name: ethics
