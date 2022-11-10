@@ -50,8 +50,7 @@ along with the following infuriating statement:
 Assuming this statement was done in good will, an assumption which is not reasonable in my book,
 this excuses no wrongdoing or oversight. That is because, even if it is true, it means it is based
 on a calendar that has no fundamental relationship to official state calendars: Kristallnacht is
-**not** a national observance in Germany: it is neither a holiday, nor a celebration or public
-holiday.
+**not** a national observance in Germany: it is neither a holiday, nor a celebration.
 
 This is such an egregious lack of care that is positively racist and antisemitic in particular,
 regardless of whether it is illegal or not, which frankly I hope it is. It is equally unquestionable
@@ -64,8 +63,8 @@ Unfortunately, the company does not seem to be facing anything but public outcry
 forgotten. This means the developers behind this will face no consequences, and thus continue their
 damaging practice unabated. On and on, we move on to make everything worse.
 
-<a id="ref1">https://www.forbes.com/sites/tonifitzgerald/2018/12/11/yes-you-are-seeing-more-commercials-than-ever-before/</a>
-<a id="ref2">https://blogs.opera.com/news/2022/05/how-much-time-do-you-waste-on-web-ads-weekly/</a>
-<a id="ref3">https://hbr.org/2021/04/algorithmic-nudges-dont-have-to-be-unethical</a>
-<a id="ref4">https://www.bbc.com/news/world-europe-63499057</a>
-<a id="ref5">"Kristallnacht". The Hutchinson Encyclopedia. Hutchinson Encyclopedias (18th ed.). London: Helicon. p. 1,199</a>
+* <a id="ref1">https://www.forbes.com/sites/tonifitzgerald/2018/12/11/yes-you-are-seeing-more-commercials-than-ever-before/</a>
+* <a id="ref2">https://blogs.opera.com/news/2022/05/how-much-time-do-you-waste-on-web-ads-weekly/</a>
+* <a id="ref3">https://hbr.org/2021/04/algorithmic-nudges-dont-have-to-be-unethical</a>
+* <a id="ref4">https://www.bbc.com/news/world-europe-63499057</a>
+* <a id="ref5">"Kristallnacht". The Hutchinson Encyclopedia. Hutchinson Encyclopedias (18th ed.). London: Helicon. p. 1,199</a>
