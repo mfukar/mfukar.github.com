@@ -178,3 +178,6 @@ bugs:
 ethics:
     slug: ethics
     name: ethics
+gnss:
+    slug: gnss
+    name: gnss
