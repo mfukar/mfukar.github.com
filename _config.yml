@@ -9,4 +9,5 @@ kramdown:
         - footnotes
         - smart
 redcarpet:
-    extensions: ['smart', 'autolink', 'tables', 'fenced_code_blocks', 'strikethrough', 'superscript', 'no_intra_emphasis', 'space_after_headers', 'footnotes']
+    extensions: ['smart', 'autolink', 'tables', 'fenced_code_blocks', 'strikethrough',
+      'superscript', 'no_intra_emphasis', 'space_after_headers', 'footnotes', 'with_toc_data']
